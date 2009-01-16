@@ -347,8 +347,10 @@ static t_account * account_load_new(char const * name, unsigned uid)
 
     force_account_add = 1; /* disable the protection */
     attrgroup = attrgroup_create_nameuid(name, uid);
-    if (!attrgroup) return NULL;
-
+    if (!attrgroup) {
+		force_account_add = 0;
+		return NULL;
+    }
     if (!(account = account_load(attrgroup))) {
         eventlog(eventlog_level_error, __FUNCTION__,"could not load account");
         attrgroup_destroy(attrgroup);

@@ -497,6 +497,7 @@ extern int channel_add_connection(t_channel * channel, t_connection * connection
         char* tmpname=(char *)channel_get_name(channel);
         if(tmpname)
             if(0!=strncasecmp(tmpname,"ch-",3)&&0!=strncasecmp(tmpname,"Brood War-",10)
+			&&0!=strncasecmp(tmpname,"cl-",3)
 			&&0!=strncasecmp(tmpname,"op ",3)
 			&&0!=strcmp(tmpname,"[    레더, The Royal    ]")
 			&&0!=strcmp(tmpname,"[    레더방     ]")

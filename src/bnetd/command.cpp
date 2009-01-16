@@ -574,29 +574,57 @@ extern int handle_command(t_connection * c,  char const * text)
 
 static int _handle_clan_command(t_connection * c, char const * text)
 {
-    t_account * acc;
-    t_clanmember * member;
-    t_clan * clan;
+	t_account * acc=0;
+	t_clanmember * member=0;
+	t_clan * clan=0;
 
     text = skip_command(text);
 
+	message_send_text(c,message_type_info,c,"[테스트 중인 기능입니다. 추후 클랜리셋 됩니다]");
     if ( text[0] == '\0' )
     {
         message_send_text(c,message_type_info,c,"usage:");
         message_send_text(c,message_type_info,c,"/clan public  /clan pub");
-        message_send_text(c,message_type_info,c,"Opens the clan channel up to the public so that anyone may enter.");
+		message_send_text(c,message_type_info,c,"모두 클랜 채널에 들어가기");
         message_send_text(c,message_type_info,c,"/clan private  /clan priv");
-        message_send_text(c,message_type_info,c,"Closes the clan channel such that only members of the clan may enter.");
+		message_send_text(c,message_type_info,c,"클랜원만 클랜 채널에 들어가기");
         message_send_text(c,message_type_info,c,"/clan motd MESSAGE");
-        message_send_text(c,message_type_info,c,"Update the clan message of the day to MESSAGE.");
+		message_send_text(c,message_type_info,c,"클랜 인사말 설정하기");
+		message_send_text(c,message_type_info,c,"/clan create <클랜닉> <클랜채널> <ID-1> <ID-2> <ID-3> <ID-4>");
+		message_send_text(c,message_type_info,c,"클랜만들기");
+		message_send_text(c,message_type_info,c," - 클랜닉 : 영문과 숫자 조합 4글자");
+		message_send_text(c,message_type_info,c," - 클랜채널 : 클랜의 채널 'cl-' 생략");
+		message_send_text(c,message_type_info,c," - ID-1,2,3,4 : 클랜가입에 동의한 4명의 ID");
+		message_send_text(c,message_type_info,c,"/c check <클랜닉>");
+		message_send_text(c,message_type_info,c,"해당 클랜닉으로 클랜 생성 가능한지 확인하기");
+		message_send_text(c,message_type_info,c,"/c join <클랜닉>");
+		message_send_text(c,message_type_info,c,"클랜가입에 동의 하기");
+		message_send_text(c,message_type_info,c,"/c remove <username>");
+		message_send_text(c,message_type_info,c,"길드원 삭제하기");
+		message_send_text(c,message_type_info,c,"/c add <username>");
+		message_send_text(c,message_type_info,c,"길드원 추가하기, 반드시 클랜가입동의가 필요함");
+		message_send_text(c,message_type_info,c,"/c list");
+		message_send_text(c,message_type_info,c,"클랜원 목록보기");
+		message_send_text(c,message_type_info,c,"/c m <할말>");
+		message_send_text(c,message_type_info,c,"클랜원들에게 말하기");
+		message_send_text(c,message_type_info,c,"/c newmaster <ID>");
+		message_send_text(c,message_type_info,c,"클랜장을 다른사람에게 넘기기");
+		message_send_text(c,message_type_info,c,"");
+		message_send_text(c,message_type_info,c,"클랜생성시 주어지는 채널 : cl-<클랜채널>");
         return 0;
     }
 
-    if((acc = conn_get_account(c)) && (member = account_get_clanmember(acc)) && (clan = clanmember_get_clan(member)))
-    {
-        if(clanmember_get_status(member)>=CLAN_SHAMAN)
-        {
+	((acc = conn_get_account(c)) && (member = account_get_clanmember(acc)) && (clan = clanmember_get_clan(member)));
+
+
             if (strstart(text,"public")==0 || strstart(text,"pub")==0) {
+		if(!clan)
+		{
+			message_send_text(c,message_type_error,c,"You are not in a clan!");
+			return 0;
+		}
+		if (clanmember_get_status(member)<CLAN_CHIEFTAIN)
+			message_send_text(c,message_type_error,c,"You are not a ClanMaster!");
                 if(clan_get_channel_type(clan)!=0)
                 {
                     clan_set_channel_type(clan,0);
@@ -605,8 +633,14 @@ static int _handle_clan_command(t_connection * c, char const * text)
                 else
                     message_send_text(c,message_type_error,c,"Clan channel has already been opened up!");
             }
-            else
-                if (strstart(text,"private")==0 || strstart(text,"priv")==0) {
+	else if (strstart(text,"private")==0 || strstart(text,"priv")==0) {
+		if(!clan)
+		{
+			message_send_text(c,message_type_error,c,"You are not in a clan!");
+			return 0;
+		}
+		if (clanmember_get_status(member)<CLAN_CHIEFTAIN)
+			message_send_text(c,message_type_error,c,"You are not a ClanMaster!");
                     if(clan_get_channel_type(clan)!=1)
                     {
                         clan_set_channel_type(clan,1);
@@ -615,9 +649,16 @@ static int _handle_clan_command(t_connection * c, char const * text)
                     else
                         message_send_text(c,message_type_error,c,"Clan channel has already been closed!");
                 }
-                else
-                    if (strstart(text,"motd")==0) {
+	else if (strstart(text,"motd")==0)
+	{
                         const char * msg=skip_command(text);
+		if(!clan)
+		{
+			message_send_text(c,message_type_error,c,"You are not in a clan!");
+			return 0;
+		}
+		if (clanmember_get_status(member)<CLAN_CHIEFTAIN)
+			message_send_text(c,message_type_error,c,"You are not a ClanMaster!");
                         if(msg[0]=='\0')
                         {
                             message_send_text(c,message_type_info,c,"usage:");
@@ -630,13 +671,568 @@ static int _handle_clan_command(t_connection * c, char const * text)
                             message_send_text(c,message_type_info,c,"Clan message of day is updated!");
                         }
                     }
-        }
-        else
-            message_send_text(c,message_type_error,c,"You are not the chieftain or shaman of clan!");
-    }
-    else
-        message_send_text(c,message_type_error,c,"You are not in a clan!");
+	else if (strstart(text,"add")==0 || strstart(text,"a")==0)
+	{
+		t_packet 	* rpacket;
+		t_connection 	* dest_c;
+		t_account    	* friend_acc;
+		t_server_friendslistreply_status status;
+		t_game * game;
+		t_channel * channel;
+		char stat;
+		t_clanmember *member;
 
+		if(!clan)
+		{
+			message_send_text(c,message_type_error,c,"You are not in a clan!");
+			return 0;
+		}
+		if (clanmember_get_status(member)<CLAN_CHIEFTAIN)
+			message_send_text(c,message_type_error,c,"You are not a ClanMaster!");
+		text = skip_command(text);
+
+		if (text[0] == '\0') {
+			message_send_text(c,message_type_info,c,"usage: /c add <username>");
+			return 0;
+        }
+
+		if (!(friend_acc = accountlist_find_account(text))) {
+			message_send_text(c,message_type_info,c,"That user does not exist.");
+			return 0;
+		}
+		if (clan_get_member_count(clan) >= prefs_get_clan_max_members()) {
+			sprintf(msgtemp, "You can only have a maximum of %d Clan members.", prefs_get_max_friends());
+			message_send_text(c,message_type_info,c,msgtemp);
+			return 0;
+		}
+		if(acc==friend_acc)
+		{
+			message_send_text(c,message_type_info,c,"You can't add yourself to your Clan members list.");
+			return 0;
+		}
+		if(account_get_clan(friend_acc))
+		{
+			sprintf(msgtemp, "%s has Clan members already!", text);
+			message_send_text(c,message_type_info,c,msgtemp);
+			return 0;
+		}
+		if(account_get_numattr(friend_acc,"BNET\\joinclan")!=clan_get_clantag(clan))
+		{
+			sprintf(msgtemp, "%s님이 동의하지않으셨습니다. (동의 방법 : /clan join 클랜닉)", text);
+			message_send_text(c,message_type_info,c,msgtemp);
+			return 0;
+		}
+		if(!(member = clan_add_member(clan, friend_acc, 1)))
+		{
+			message_send_text(c,message_type_error,c,"Server error.");
+			return 0;
+		}
+		sprintf( msgtemp, "Added %s to your Clan members list.", text);
+		message_send_text(c,message_type_info,c,msgtemp);
+		dest_c = connlist_find_connection_by_account(friend_acc);
+		if(dest_c!=NULL) {
+			sprintf(msgtemp,"%s added you to his/her Clan members  list.",conn_get_username(c));
+			message_send_text(dest_c,message_type_info,dest_c,msgtemp);
+		}
+//		clanlog(clan_get_clantag(clan),"MI",text,0);
+	}
+	else if (strstart(text,"newmaster")==0)
+	{
+		t_packet 	* rpacket;
+		t_connection 	* dest_c;
+		t_account    	* friend_acc;
+		t_server_friendslistreply_status status;
+		t_game * game;
+		t_channel * channel;
+		char stat;
+		t_clanmember *member;
+
+		if(!clan)
+		{
+			message_send_text(c,message_type_error,c,"You are not in a clan!");
+			return 0;
+		}
+		if (clanmember_get_status(member)<CLAN_CHIEFTAIN)
+		{
+			message_send_text(c,message_type_error,c,"You are not a ClanMaster!");
+			return 0;
+		}
+		text = skip_command(text);
+
+		if (text[0] == '\0') {
+			message_send_text(c,message_type_info,c,"usage: /c add <username>");
+			return 0;
+		}
+
+		if (!(friend_acc = accountlist_find_account(text))) {
+			message_send_text(c,message_type_info,c,"That user does not exist.");
+			return 0;
+		}
+		if(acc==friend_acc)
+		{
+			message_send_text(c,message_type_info,c,"You can't choose yourself");
+			return 0;
+		}
+		if(account_get_clan(friend_acc))
+		{
+			sprintf(msgtemp, "%s has Clan members already!", text);
+			message_send_text(c,message_type_info,c,msgtemp);
+			return 0;
+		}
+		if(clan_get_clantag(clanmember_get_clan(account_get_clanmember(friend_acc)))
+				!=clan_get_clantag(clanmember_get_clan(account_get_clanmember(acc))))
+		{
+			sprintf(msgtemp, "%s님은 다른 클랜입니다.", text);
+			message_send_text(c,message_type_info,c,msgtemp);
+			return 0;
+		}
+		clanmember_set_status(account_get_clanmember(acc),CLAN_PEON);
+		clanmember_set_status(account_get_clanmember(friend_acc),CLAN_CHIEFTAIN);
+		sprintf( msgtemp, " %s 님이 새로 길드마스터가 되셨습니다", text);
+		message_send_text(c,message_type_info,c,msgtemp);
+		dest_c = connlist_find_connection_by_account(friend_acc);
+		if(dest_c!=NULL) {
+			sprintf(msgtemp,"%s 님이 귀하를 길드마스터로 추대하였습니다",conn_get_username(c));
+			message_send_text(dest_c,message_type_info,dest_c,msgtemp);
+		}
+		//clanlog(clan_get_clantag(clan),"MU",conn_get_username(c),0);
+		//clanlog(clan_get_clantag(clan),"MU",text,1);
+	}
+	else if (strstart(text,"remove")==0 || strstart(text,"r")==0)
+	{
+		t_packet 	* rpacket;
+		t_connection 	* dest_c;
+		t_account    	* friend_acc;
+		t_server_friendslistreply_status status;
+		t_game * game;
+		t_channel * channel;
+		char stat;
+		t_clanmember *member;
+
+		if(!clan)
+		{
+			message_send_text(c,message_type_error,c,"You are not in a clan!");
+			return 0;
+		}
+		if (clanmember_get_status(member)<CLAN_CHIEFTAIN)
+			message_send_text(c,message_type_error,c,"You are not a ClanMaster!");
+		text = skip_command(text);
+
+		if (text[0] == '\0') {
+			message_send_text(c,message_type_info,c,"usage: /c remove <username>");
+			return 0;
+		}
+
+		if (!(friend_acc = accountlist_find_account(text))) {
+			message_send_text(c,message_type_info,c,"That user does not exist.");
+			return 0;
+		}
+		if(acc==friend_acc)
+		{
+			message_send_text(c,message_type_info,c,"You can't remove yourself to your Clan members list.");
+			return 0;
+		}
+		if(!account_get_clan(friend_acc))
+		{
+			sprintf(msgtemp, "%s is not Clan members!", text);
+			message_send_text(c,message_type_info,c,msgtemp);
+			return 0;
+		}
+		if(clan_get_clantag(account_get_clan(friend_acc))!=clan_get_clantag(clan))
+		{
+			sprintf(msgtemp, "%s is not Clan members!", text);
+			message_send_text(c,message_type_info,c,msgtemp);
+			return 0;
+		}
+		if(!clan_remove_member(clan, account_get_clanmember(friend_acc)))
+		{
+			message_send_text(c,message_type_error,c,"Server error.");
+			return 0;
+		}
+		sprintf( msgtemp, "Deleted %s to your Clan members list.", text);
+		message_send_text(c,message_type_info,c,msgtemp);
+		dest_c = connlist_find_connection_by_account(friend_acc);
+		if(dest_c!=NULL) {
+			sprintf(msgtemp,"%s deleted you to his/her Clan members  list.",conn_get_username(c));
+			message_send_text(dest_c,message_type_info,dest_c,msgtemp);
+		}
+		//clanlog(clan_get_clantag(clan),"MD",text,0);
+	}
+	else if (strstart(text,"msg")==0 || strstart(text,"w")==0 || strstart(text,"whisper")==0 || strstart(text,"m")==0)
+	{
+		char const *msg;
+		int cnt = 0;
+		t_connection * dest_c;
+		t_elem  * curr;
+		t_friend * fr;
+		t_list  * flist;
+		t_account * memberacc;
+
+		if(!clan)
+		{
+			message_send_text(c,message_type_error,c,"You are not in a clan!");
+			return 0;
+		}
+		msg = skip_command(text);
+		/* if the message test is empty then ignore command */
+		if (msg[0]=='\0') {
+			message_send_text(c,message_type_info,c,"Did not message any friends. Type some text next time.");
+			return 0;
+    }
+
+		LIST_TRAVERSE(clan_get_members(clan), curr)
+		{
+			if (!(member = (t_clanmember*)elem_get_data(curr))) {
+				eventlog(eventlog_level_error,__FUNCTION__,"found NULL entry in list");
+				continue;
+			}
+			if (!(memberacc = clanmember_get_account(member)))
+			{
+				eventlog(eventlog_level_error,__FUNCTION__,"member has NULL account");
+				continue;
+			}
+			dest_c = connlist_find_connection_by_account(memberacc);
+			if (!dest_c) continue;
+			if(conn_get_dndstr(dest_c,1))
+			{
+				sprintf(msgtemp,"%s is refusing messages (%.128s)",
+						account_get_name(memberacc),
+						conn_get_dndstr(dest_c,1));
+				message_send_text(c,message_type_info,c,msgtemp);
+				continue;
+			}
+			message_send_text(dest_c,message_type_whisper,c,msg);
+			cnt++;
+		}
+		if(cnt)
+			message_send_text(c,message_type_friendwhisperack,c,msg);
+    else
+			message_send_text(c,message_type_info,c,"All your Clan members are offline.");
+		return 0;
+	}
+	else if (strstart(text,"list")==0 || strstart(text,"l")==0) {
+		char const * friend_;
+		char status[128];
+		char software[64];
+		char msgtemp[MAX_MESSAGE_LEN];
+		t_connection * dest_c;
+		t_account * friend_acc;
+		t_game const * game;
+		t_channel const * channel;
+		t_friend * fr;
+		t_list  * flist;
+		int num;
+		unsigned int uid;
+		t_elem  * curr;
+		int i=-1;
+
+		if(!clan)
+		{
+        message_send_text(c,message_type_error,c,"You are not in a clan!");
+			return 0;
+		}
+		message_send_text(c,message_type_info,c,"Clan members List");
+		message_send_text(c,message_type_info,c,"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+		LIST_TRAVERSE(clan_get_members(clan), curr)
+		{
+			i++;
+			if (!(member = (t_clanmember*)elem_get_data(curr))) {
+				eventlog(eventlog_level_error,__FUNCTION__,"found NULL entry in list");
+				continue;
+			}
+			if (!(friend_acc = clanmember_get_account(member)))
+			{
+				eventlog(eventlog_level_error,__FUNCTION__,"member has NULL account");
+				continue;
+			}
+			software[0]='\0';
+			if (!(dest_c = connlist_find_connection_by_account(friend_acc)))
+				sprintf(status, ", offline");
+			else {
+				sprintf(software," using %s", clienttag_get_title(conn_get_clienttag(dest_c)));
+
+				if ((game = conn_get_game(dest_c)))
+					sprintf(status, ", in game \"%.64s\"", game_get_name(game));
+				else if ((channel = conn_get_channel(dest_c))) {
+					if(strcasecmp(channel_get_name(channel),"Arranged Teams")==0)
+						sprintf(status, ", in game AT Preparation");
+					else
+						sprintf(status, ", in channel \"%.64s\",", channel_get_name(channel));
+				}
+				else
+					sprintf(status, ", is in AT Preparation");
+			}
+
+			friend_=account_get_name(friend_acc);
+			if (software[0]) sprintf(msgtemp, "%d: %.16s%.128s, %.64s", i+1,  friend_, status,software);
+			else sprintf(msgtemp, "%d: %.16s%.128s", i+1, friend_, status);
+			message_send_text(c,message_type_info,c,msgtemp);
+		}
+		message_send_text(c,message_type_info,c,"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+		return 0;
+	}
+	else if (acc &&(strstart(text,"join")==0 || strstart(text,"j")==0))
+	{
+		t_packet 	* rpacket;
+		t_connection 	* dest_c;
+		t_account    	* friend_acc;
+		t_server_friendslistreply_status status;
+		t_game * game;
+		t_channel * channel;
+		char stat;
+		t_clanmember *member;
+		int i,j;
+		char tag[4];
+
+		text = skip_command(text);
+
+		if (text[0] == '\0') {
+			j=account_get_numattr(acc,"BNET\\joinclan");
+			if(j)
+			{
+				sprintf(msgtemp,"현재 가입 동의한 클랜닉 : '%c$c$c$c'",(j>>24)&0xff,(j>>16)&0xff,(j>>8)&0xff,(j)&0xff);
+				message_send_text(c,message_type_info,c,"usage: /c join <클랜닉>");
+			}
+			message_send_text(c,message_type_info,c,"usage: /c join <클랜닉>");
+			return 0;
+		}
+		if(strlen(text)!=4)
+		{
+			message_send_text(c,message_type_info,c,"클랜닉은 영문자와 숫자로 4글자입니다");
+			return 0;
+		}
+		for(i=0;i<4;i++)
+		{
+			tag[i]=text[i];
+			j=0;
+			if(tag[i]>='a'&&tag[i]<='z')
+			{
+				j=1;
+			}
+			if(!j&&tag[i]>='A'&&tag[i]<='Z')
+				j=1;
+			if(!j&&tag[i]>='0'&&tag[i]<='9')
+				j=1;
+			if(j==0)break;
+		}
+		if(i!=4)
+		{
+			message_send_text(c,message_type_info,c,"클랜닉은 영문자와 숫자로 4글자입니다");
+			return 0;
+		}
+		account_set_numattr(acc,"BNET\\joinclan",str_to_clantag(tag));
+		message_send_text(c,message_type_info,c,"클랜초대를 받을 준비가 되었습니다");
+	}
+	else if (acc &&(strstart(text,"create")==0 || strstart(text,"c")==0))
+	{
+		t_packet 	* rpacket;
+		t_connection 	* dest_c;
+		t_account    	* friend_acc,*account;
+		t_server_friendslistreply_status status;
+		t_game * game;
+		t_channel * channel;
+		char stat;
+		t_clanmember *member;
+		int i,j;
+		char const *tag,*clanname, *mem[4];
+		int created, clantag;
+		t_clan *clan;
+		const int CLANMEM=4;
+
+		tag = skip_command(text);
+		clanname = skip_command(tag);
+		mem[0]=skip_command(clanname);
+		mem[1]=skip_command(mem[0]);
+		mem[2]=skip_command(mem[1]);
+		mem[3]=skip_command(mem[2]);
+
+
+
+		if (tag[0] == '\0' || clanname[0] == '\0')
+		{
+			message_send_text(c,message_type_info,c,"usage: /c create <클랜닉> <클랜채널> <ID-1> <ID-2> <ID-3> <ID-4>");
+			return 0;
+		}
+		for(i=0;i<CLANMEM;i++)
+		{
+			if(mem[i][0] ==0)
+			{
+				message_send_text(c,message_type_info,c,"usage: /c create <클랜닉> <클랜채널> <ID-1> <ID-2> <ID-3> <ID-4>");
+				return 0;
+			}
+		}
+		if(strlen(tag)!=4)
+		{
+			message_send_text(c,message_type_error,c,"클랜닉은 영문자와 숫자로 4글자입니다");
+			return 0;
+		}
+		for(i=0;i<4;i++)
+		{
+			j=0;
+			if(tag[i]>='a'&&tag[i]<='z')
+				j=1;
+			if(!j&&tag[i]>='A'&&tag[i]<='Z')
+				j=1;
+			if(!j&&tag[i]>='0'&&tag[i]<='9')
+				j=1;
+			if(j==0)break;
+		}
+		if(i!=4)
+		{
+			message_send_text(c,message_type_error,c,"클랜닉은 영문자와 숫자로 4글자입니다");
+			return 0;
+		}
+		clantag=str_to_clantag(tag);
+		if(clanlist_find_clan_by_clantag(clantag)!=NULL)
+		{
+			message_send_text(c,message_type_error,c,"이미 존재하는 클랜닉입니다.");
+			return 0;
+		}
+		if (clanlist_find_clan_by_clanname(clanname)!=NULL)
+		{
+			message_send_text(c,message_type_error,c,"이미 존재하는 클랜채널입니다.");
+			return 0;
+		}
+		if ((account = conn_get_account(c)) && (account_get_clan(account) != NULL))
+		{
+			message_send_text(c,message_type_error,c,"현재 클랜에 소속 중입니다.");
+			return 0;
+		}
+		for (i=0;i<CLANMEM;i++)
+		{
+			if (!(friend_acc = accountlist_find_account(mem[i]))) {
+				sprintf(msgtemp,"%d번쨰 입력한 %s 유저가 존재하지 않습니다",i+1,mem[i]);
+				message_send_text(c,message_type_error,c,msgtemp);
+				return 0;
+			}
+			if(conn_get_account(c)==friend_acc)
+			{
+				message_send_text(c,message_type_error,c,"자신은 클랜 멤버로 등록할 수 없습니다");
+				return 0;
+			}
+			if(account_get_numattr(friend_acc,"BNET\\joinclan")!=clantag)
+			{
+				sprintf(msgtemp, "%s님이 동의하지않으셨습니다. (동의 방법 : /clan join 클랜닉)", mem[i]);
+				message_send_text(c,message_type_error,c,msgtemp);
+				return 0;
+			}
+			for(j=i+1;j<CLANMEM;j++)
+			{
+				if(0==strcasecmp(mem[i],mem[j]))
+				{
+					message_send_text(c,message_type_error,c,"중복된 ID가 존재합니다");
+					return 0;
+				}
+			}
+		}
+		if(clanlist_find_clan_by_clantag(clantag)!=NULL)
+		{
+			message_send_text(c,message_type_error,c,"이미 존재하는 클랜닉입니다.");
+			return 0;
+		}
+		if (!(clan = clan_create(account, clantag, clanname, NULL))) {
+			message_send_text(c,message_type_error,c,"클랜 생성 중 에러 발생(1)");
+			return 0;
+		}
+		if (clanlist_add_clan(clan)==-1) {
+			message_send_text(c,message_type_error,c,"클랜 생성 중 에러 발생(2)");
+			return 0;
+		}
+		clan_set_created(clan,120);
+		//clanlog(clan_get_clantag(clan),"CI",clanname,0);
+		//clanlog(clan_get_clantag(clan),"MI",account_get_name(acc),1);
+		for (i=0;i<CLANMEM;i++)
+		{
+			clan_add_member(clan, accountlist_find_account(mem[i]), CLAN_NEW);
+			//clanlog(clan_get_clantag(clan),"MI",mem[i],0);
+		}
+		message_send_text(c,message_type_info,c,"클랜이 생성 되었습니다.");
+		return 0;
+	}
+	else if (acc &&(strstart(text,"check")==0))
+	{
+		t_packet 	* rpacket;
+		t_connection 	* dest_c;
+		t_account    	* friend_acc,*account;
+		t_server_friendslistreply_status status;
+		t_game * game;
+		t_channel * channel;
+		char stat;
+		t_clanmember *member;
+		int i,j;
+		char const *tag;
+		int created, clantag;
+		t_clan *clan;
+
+		tag = skip_command(text);
+
+		if (tag[0] == '\0')
+		{
+			message_send_text(c,message_type_info,c,"usage: /c check <클랜닉>");
+			return 0;
+		}
+		if(strlen(tag)!=4)
+		{
+			message_send_text(c,message_type_error,c,"클랜닉은 영문자와 숫자로 4글자입니다");
+			return 0;
+		}
+		for(i=0;i<4;i++)
+		{
+			j=0;
+			if(tag[i]>='a'&&tag[i]<='z')
+				j=1;
+			if(!j&&tag[i]>='A'&&tag[i]<='Z')
+				j=1;
+			if(!j&&tag[i]>='0'&&tag[i]<='9')
+				j=1;
+			if(j==0)break;
+		}
+		if(i!=4)
+		{
+			message_send_text(c,message_type_error,c,"클랜닉은 영문자와 숫자로 4글자입니다");
+			return 0;
+		}
+		clantag=str_to_clantag(tag);
+		if(clanlist_find_clan_by_clantag(clantag)!=NULL)
+		{
+			message_send_text(c,message_type_error,c,"이미 존재하는 클랜닉입니다.");
+			return 0;
+		}
+		message_send_text(c,message_type_info,c,"해당 닉으로 클랜이 생성가능합니다.");
+		return 0;
+	}
+	else
+	{
+		message_send_text(c,message_type_info,c,"usage:");
+		message_send_text(c,message_type_info,c,"/clan public  /clan pub");
+		message_send_text(c,message_type_info,c,"모두 클랜 채널에 들어가기");
+		message_send_text(c,message_type_info,c,"/clan private  /clan priv");
+		message_send_text(c,message_type_info,c,"클랜원만 클랜 채널에 들어가기");
+		message_send_text(c,message_type_info,c,"/clan motd MESSAGE");
+		message_send_text(c,message_type_info,c,"클랜 인사말 설정하기");
+		message_send_text(c,message_type_info,c,"/clan create <클랜닉> <클랜채널> <ID-1> <ID-2> <ID-3> <ID-4>");
+		message_send_text(c,message_type_info,c,"클랜만들기");
+		message_send_text(c,message_type_info,c," - 클랜닉 : 영문과 숫자 조합 4글자");
+		message_send_text(c,message_type_info,c," - 클랜채널 : 클랜의 채널 'cl-' 생략");
+		message_send_text(c,message_type_info,c," - ID-1,2,3,4 : 클랜가입에 동의한 4명의 ID");
+		message_send_text(c,message_type_info,c,"/c check <클랜닉>");
+		message_send_text(c,message_type_info,c,"해당 클랜닉으로 클랜 생성 가능한지 확인하기");
+		message_send_text(c,message_type_info,c,"/c join <클랜닉>");
+		message_send_text(c,message_type_info,c,"클랜가입에 동의 하기");
+		message_send_text(c,message_type_info,c,"/c remove <username>");
+		message_send_text(c,message_type_info,c,"길드원 삭제하기");
+		message_send_text(c,message_type_info,c,"/c add <username>");
+		message_send_text(c,message_type_info,c,"길드원 추가하기, 반드시 클랜가입동의가 필요함");
+		message_send_text(c,message_type_info,c,"/c list");
+		message_send_text(c,message_type_info,c,"클랜원 목록보기");
+		message_send_text(c,message_type_info,c,"/c m <할말>");
+		message_send_text(c,message_type_info,c,"클랜원들에게 말하기");
+		message_send_text(c,message_type_info,c,"/c newmaster <ID>");
+		message_send_text(c,message_type_info,c,"클랜장을 다른사람에게 넘기기");
+		message_send_text(c,message_type_info,c,"");
+		message_send_text(c,message_type_info,c,"클랜생성시 주어지는 채널 : cl-<클랜채널>");
+		return 0;
+	}
     return 0;
 }
 
@@ -1435,7 +2031,8 @@ static int _handle_friends_command(t_connection * c, char const * text)
         }
 
         switch((num = account_remove_friend2(my_acc, text))) {
-        case -1: return -1;
+		case -1:
+			return -1;
         case -2:
             sprintf(msgtemp, "%s was not found on your friends list.", text);
             message_send_text(c,message_type_info,c,msgtemp);

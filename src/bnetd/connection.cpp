@@ -1919,22 +1919,15 @@ extern int conn_set_channel(t_connection * c, char const * channelname)
         if(channel && (channel == oldchannel))
             return 0;
 
-        if((strncasecmp(channelname, "clan ", 5)==0)&&(strlen(channelname)<10))
-            clantag = str_to_clantag(&channelname[5]);
+		if (strncasecmp(channelname, "cl-", 3)==0)
+            {
+			clan = clanlist_find_clan_by_clanname(&channelname[4]);
 
-        if(clantag && ((!(clan = account_get_clan(acc))) || (clan_get_clantag(clan) != clantag)))
-        {
-            if (!channel)
+
+			if (clan)
             {
-                char msgtemp[MAX_MESSAGE_LEN];
-                sprintf(msgtemp, "Unable to join channel %s, there is no member of that clan in the channel!", channelname);
-                message_send_text(c, message_type_error, c, msgtemp);
-                return 0;
-            }
-            else
-            {
-                t_clan * ch_clan;
-                if((ch_clan=clanlist_find_clan_by_clantag(clantag))&&(clan_get_channel_type(ch_clan)==1))
+				clantag=clan_get_clantag(clan);
+				if(clan_get_channel_type(clan)==1 && clan != account_get_clan(acc))
                 {
                     message_send_text(c, message_type_error, c, "This is a private clan channel, unable to join!");
                     return 0;

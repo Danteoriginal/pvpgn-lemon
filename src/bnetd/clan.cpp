@@ -65,6 +65,7 @@
 #include "common/bnettime.h"
 #include "common/eventlog.h"
 #include "common/list.h"
+#include "common/hashtable.h"
 #include "common/proginfo.h"
 #include "common/bn_type.h"
 #include "common/xalloc.h"
@@ -82,7 +83,9 @@
 #include "compat/uint.h"
 #include "common/setup_after.h"
 
-static t_list *clanlist_head = NULL;
+static t_hashtable *clanlist_head = NULL;
+static t_hashtable *clanlist_head_tag = NULL;
+static t_hashtable *clanlist_head_name = NULL;
 int max_clanid = 0;
 
 /* callback function for storage use */
@@ -103,6 +106,20 @@ static int _cb_load_clans(void *clan)
 /*
 ** Packet Management
 */
+unsigned int clan_hash(char const *username)
+{
+    register unsigned int h;
+    register unsigned int len = strlen(username);
+
+    for (h = 5381; len > 0; --len, ++username) {
+        h += h << 5;
+        if (isupper((int) *username) == 0)
+            h ^= *username;
+        else
+            h ^= tolower((int) *username);
+    }
+    return h;
+}
 
 extern int clan_send_packet_to_online_members(t_clan * clan, t_packet * packet)
 {
@@ -667,7 +684,17 @@ extern int clanlist_remove_clan(t_clan * clan)
 	eventlog(eventlog_level_error, __FUNCTION__, "get NULL clan");
 	return -1;
     }
-    if (list_remove_data(clanlist_head, clan, &elem) < 0)
+    if (hashtable_remove_data(clanlist_head, clan, clan->clanid) < 0)
+    {
+	eventlog(eventlog_level_error, __FUNCTION__, "could not delete clan entry");
+	return -1;
+    }
+    if (hashtable_remove_data(clanlist_head_tag, clan, clan->clantag) < 0)
+    {
+	eventlog(eventlog_level_error, __FUNCTION__, "could not delete clan entry");
+	return -1;
+    }
+    if (hashtable_remove_data(clanlist_head_name, clan, clan_hash(clan->clanname)) < 0)
     {
 	eventlog(eventlog_level_error, __FUNCTION__, "could not delete clan entry");
 	return -1;
@@ -699,7 +726,7 @@ extern int clan_save(t_clan * clan)
     return 0;
 }
 
-extern t_list *clanlist(void)
+extern t_hashtable *clanlist(void)
 {
     return clanlist_head;
 }
@@ -715,7 +742,9 @@ extern int clanlist_add_clan(t_clan * clan)
     if (!(clan->clanid))
 	clan->clanid = ++max_clanid;
 
-    list_append_data(clanlist_head, clan);
+    hashtable_insert_data(clanlist_head, clan,clan->clanid);
+    hashtable_insert_data(clanlist_head_tag, clan,clan->clantag);
+    hashtable_insert_data(clanlist_head_name, clan,clan_hash(clan->clanname));
 
     return clan->clanid;
 }
@@ -726,7 +755,9 @@ int clanlist_load(void)
     if (clanlist_head)
 	clanlist_unload();
 
-    clanlist_head = list_create();
+    clanlist_head = hashtable_create(prefs_get_hashtable_size());
+	clanlist_head_tag = hashtable_create(prefs_get_hashtable_size());
+	clanlist_head_name = hashtable_create(prefs_get_hashtable_size());
 
     storage->load_clans(_cb_load_clans);
 
@@ -735,14 +766,14 @@ int clanlist_load(void)
 
 extern int clanlist_save(void)
 {
-    t_elem *curr;
+    t_entry *curr;
     t_clan *clan;
 
     if (clanlist_head)
     {
-	LIST_TRAVERSE(clanlist_head, curr)
+	HASHTABLE_TRAVERSE(clanlist_head, curr)
 	{
-	    if (!(clan = (t_clan*)elem_get_data(curr)))
+	    if (!(clan = (t_clan*)entry_get_data(curr)))
 	    {
 		eventlog(eventlog_level_error, __FUNCTION__, "found NULL entry in list");
 		continue;
@@ -758,14 +789,14 @@ extern int clanlist_save(void)
 
 extern int clanlist_unload(void)
 {
-    t_elem *curr;
+    t_entry *curr;
     t_clan *clan;
 
     if (clanlist_head)
     {
-	LIST_TRAVERSE(clanlist_head, curr)
+	HASHTABLE_TRAVERSE(clanlist_head, curr)
 	{
-	    if (!(clan = (t_clan*)elem_get_data(curr)))
+	    if (!(clan = (t_clan*)entry_get_data(curr)))
 	    {
 		eventlog(eventlog_level_error, __FUNCTION__, "found NULL entry in list");
 		continue;
@@ -776,13 +807,21 @@ extern int clanlist_unload(void)
 		xfree((void *) clan->clan_motd);
 	    clan_unload_members(clan);
 	    xfree((void *) clan);
-	    list_remove_elem(clanlist_head, &curr);
+	    hashtable_remove_entry(clanlist_head, curr);
+	    hashtable_remove_entry(clanlist_head_tag, curr);
+	    hashtable_remove_entry(clanlist_head_name, curr);
 	}
 
-	if (list_destroy(clanlist_head) < 0)
+	if (hashtable_destroy(clanlist_head) < 0)
+	    return -1;
+	if (hashtable_destroy(clanlist_head_tag) < 0)
+	    return -1;
+	if (hashtable_destroy(clanlist_head_name) < 0)
 	    return -1;
 
 	clanlist_head = NULL;
+	clanlist_head_tag = NULL;
+	clanlist_head_name = NULL;
     }
 
     return 0;
@@ -790,14 +829,14 @@ extern int clanlist_unload(void)
 
 extern t_clan *clanlist_find_clan_by_clanid(int cid)
 {
-    t_elem *curr;
+    t_entry *curr;
     t_clan *clan;
 
     if (clanlist_head)
     {
-	LIST_TRAVERSE(clanlist_head, curr)
+	HASHTABLE_TRAVERSE_MATCHING(clanlist_head, curr,cid)
 	{
-	    if (!(clan = (t_clan*)elem_get_data(curr)))
+	    if (!(clan = (t_clan*)entry_get_data(curr)))
 	    {
 		eventlog(eventlog_level_error, __FUNCTION__, "found NULL entry in list");
 		continue;
@@ -814,21 +853,46 @@ extern t_clan *clanlist_find_clan_by_clanid(int cid)
 
 extern t_clan *clanlist_find_clan_by_clantag(int clantag)
 {
-    t_elem *curr;
+    t_entry *curr;
     t_clan *clan;
 
     if (clantag == 0)
 	return NULL;
-    if (clanlist_head)
+    if (clanlist_head_tag)
     {
-	LIST_TRAVERSE(clanlist_head, curr)
+	HASHTABLE_TRAVERSE_MATCHING(clanlist_head_tag, curr,clantag)
 	{
-	    if (!(clan = (t_clan*)elem_get_data(curr)))
+	    if (!(clan = (t_clan*)entry_get_data(curr)))
 	    {
 		eventlog(eventlog_level_error, __FUNCTION__, "found NULL entry in list");
 		continue;
 	    }
 	    if (clan->created && (clan->clantag == clantag))
+		return clan;
+	}
+
+    }
+
+    return NULL;
+}
+
+extern t_clan *clanlist_find_clan_by_clanname(char const * clanname)
+{
+    t_entry *curr;
+    t_clan *clan;
+
+    if (clanname == 0)
+	return NULL;
+    if (clanlist_head_name)
+    {
+	HASHTABLE_TRAVERSE_MATCHING(clanlist_head_name, curr,clan_hash(clanname))
+	{
+	    if (!(clan = (t_clan*)entry_get_data(curr)))
+	    {
+		eventlog(eventlog_level_error, __FUNCTION__, "found NULL entry in list");
+		continue;
+	    }
+	    if (clan->created && (strcasecmp(clan->clanname,clanname)==0))
 		return clan;
 	}
 

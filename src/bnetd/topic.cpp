@@ -120,6 +120,7 @@ int topiclist_save(char const * topic_file)
             }
             if(strncasecmp(topic->channel_name,"ch-",3)==0
 				||strncasecmp(topic->channel_name,"op ",3)==0
+				||strncasecmp(topic->channel_name,"cl-",3)==0
 				||strncasecmp(topic->channel_name,"[    레더방     ]",17)==0
 				||strncasecmp(topic->channel_name,"ladderbang",10)==0
 				||strncasecmp(topic->channel_name,"[    레더, The Royal    ]",25)==0

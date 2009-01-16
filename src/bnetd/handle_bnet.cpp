@@ -3087,6 +3087,8 @@ static int _client_progident2(t_connection * c, t_packet const *const packet)
 								0==strncasecmp(channel_get_name(ch),"ch-",3)
 								||
 								0==strncasecmp(channel_get_name(ch),"op ",3)
+								||
+								0==strncasecmp(channel_get_name(ch),"cl- ",3)
 							)
 						)
 					)

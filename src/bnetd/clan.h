@@ -91,7 +91,7 @@ t_clanmember;
 #undef JUST_NEED_TYPES
 
 
-extern t_list *clanlist(void);
+extern t_hashtable *clanlist(void);
 extern int clanlist_load(void);
 extern int clanlist_save(void);
 extern int clanlist_unload(void);
@@ -99,6 +99,7 @@ extern int clanlist_remove_clan(t_clan * clan);
 extern int clanlist_add_clan(t_clan * clan);
 extern t_clan *clanlist_find_clan_by_clanid(int cid);
 extern t_clan *clanlist_find_clan_by_clantag(int clantag);
+extern t_clan *clanlist_find_clan_by_clanname(char const * clanname);
 
 
 extern t_account *clanmember_get_account(t_clanmember * member);

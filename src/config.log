@@ -14,7 +14,7 @@ hostname = lemon
 uname -m = amd64
 uname -r = 7.1-STABLE
 uname -s = FreeBSD
-uname -v = FreeBSD 7.1-STABLE #4: Sun Jan 11 19:46:56 KST 2009     root@lemon:/usr/obj/usr/src/sys/BRAIN 
+uname -v = FreeBSD 7.1-STABLE #5: Mon Jan 12 22:48:39 KST 2009     root@lemon:/usr/obj/usr/src/sys/BRAIN 
 
 /usr/bin/uname -p = amd64
 /bin/uname -X     = unknown
@@ -2328,9 +2328,9 @@ configure:9121: $? = 0
 configure:9133: result: yes
 configure:9140: checking for _doprnt
 configure:9197: gcc -o conftest -g -O2     -I/usr/local/include/mysql   -L/usr/local/lib/mysql conftest.c   -lm -lz -lmysqlclient >&5
-/var/tmp//cc1CVXet.o(.text+0x9): In function `main':
-/usr/home/src/src/conftest.c:106: undefined reference to `_doprnt'
-/var/tmp//cc1CVXet.o(.data+0x0):/usr/home/src/src/conftest.c:106: undefined reference to `_doprnt'
+/var/tmp//cc5frGrf.o(.text+0x9): In function `main':
+/usr/home/svn/pvpgn-lemon/src/conftest.c:106: undefined reference to `_doprnt'
+/var/tmp//cc5frGrf.o(.data+0x0):/usr/home/svn/pvpgn-lemon/src/conftest.c:106: undefined reference to `_doprnt'
 configure:9203: $? = 1
 configure: failed program was:
 | /* confdefs.h.  */
@@ -2772,9 +2772,9 @@ configure:9695: $? = 0
 configure:9707: result: yes
 configure:9619: checking for ftime
 configure:9676: gcc -o conftest -g -O2     -I/usr/local/include/mysql   -L/usr/local/lib/mysql conftest.c   -lm -lz -lmysqlclient >&5
-/var/tmp//ccsK0VY7.o(.text+0x9): In function `main':
-/usr/home/src/src/conftest.c:130: undefined reference to `ftime'
-/var/tmp//ccsK0VY7.o(.data+0x0):/usr/home/src/src/conftest.c:130: undefined reference to `ftime'
+/var/tmp//cclRGhSR.o(.text+0x9): In function `main':
+/usr/home/svn/pvpgn-lemon/src/conftest.c:130: undefined reference to `ftime'
+/var/tmp//cclRGhSR.o(.data+0x0):/usr/home/svn/pvpgn-lemon/src/conftest.c:130: undefined reference to `ftime'
 configure:9682: $? = 1
 configure: failed program was:
 | /* confdefs.h.  */
@@ -2934,9 +2934,9 @@ configure:9695: $? = 0
 configure:9707: result: yes
 configure:9619: checking for stricmp
 configure:9676: gcc -o conftest -g -O2     -I/usr/local/include/mysql   -L/usr/local/lib/mysql conftest.c   -lm -lz -lmysqlclient >&5
-/var/tmp//ccxGWT8O.o(.text+0x9): In function `main':
-/usr/home/src/src/conftest.c:132: undefined reference to `stricmp'
-/var/tmp//ccxGWT8O.o(.data+0x0):/usr/home/src/src/conftest.c:132: undefined reference to `stricmp'
+/var/tmp//ccqV6gyg.o(.text+0x9): In function `main':
+/usr/home/svn/pvpgn-lemon/src/conftest.c:132: undefined reference to `stricmp'
+/var/tmp//ccqV6gyg.o(.data+0x0):/usr/home/svn/pvpgn-lemon/src/conftest.c:132: undefined reference to `stricmp'
 configure:9682: $? = 1
 configure: failed program was:
 | /* confdefs.h.  */
@@ -3078,9 +3078,9 @@ configure: failed program was:
 configure:9707: result: no
 configure:9619: checking for strnicmp
 configure:9676: gcc -o conftest -g -O2     -I/usr/local/include/mysql   -L/usr/local/lib/mysql conftest.c   -lm -lz -lmysqlclient >&5
-/var/tmp//ccMSSBkC.o(.text+0x9): In function `main':
-/usr/home/src/src/conftest.c:132: undefined reference to `strnicmp'
-/var/tmp//ccMSSBkC.o(.data+0x0):/usr/home/src/src/conftest.c:132: undefined reference to `strnicmp'
+/var/tmp//cclzKlDZ.o(.text+0x9): In function `main':
+/usr/home/svn/pvpgn-lemon/src/conftest.c:132: undefined reference to `strnicmp'
+/var/tmp//cclzKlDZ.o(.data+0x0):/usr/home/svn/pvpgn-lemon/src/conftest.c:132: undefined reference to `strnicmp'
 configure:9682: $? = 1
 configure: failed program was:
 | /* confdefs.h.  */
@@ -3523,9 +3523,9 @@ configure:9695: $? = 0
 configure:9707: result: yes
 configure:9619: checking for epoll_create
 configure:9676: gcc -o conftest -g -O2     -I/usr/local/include/mysql   -L/usr/local/lib/mysql conftest.c   -lm -lz -lmysqlclient >&5
-/var/tmp//ccPNsghm.o(.text+0x9): In function `main':
-/usr/home/src/src/conftest.c:166: undefined reference to `epoll_create'
-/var/tmp//ccPNsghm.o(.data+0x0):/usr/home/src/src/conftest.c:166: undefined reference to `epoll_create'
+/var/tmp//cc6wHIM5.o(.text+0x9): In function `main':
+/usr/home/svn/pvpgn-lemon/src/conftest.c:166: undefined reference to `epoll_create'
+/var/tmp//cc6wHIM5.o(.data+0x0):/usr/home/svn/pvpgn-lemon/src/conftest.c:166: undefined reference to `epoll_create'
 configure:9682: $? = 1
 configure: failed program was:
 | /* confdefs.h.  */
@@ -3720,9 +3720,9 @@ configure:9695: $? = 0
 configure:9707: result: yes
 configure:9619: checking for _vsnprintf
 configure:9676: gcc -o conftest -g -O2     -I/usr/local/include/mysql   -L/usr/local/lib/mysql conftest.c   -lm -lz -lmysqlclient >&5
-/var/tmp//ccw7JfuR.o(.text+0x9): In function `main':
-/usr/home/src/src/conftest.c:168: undefined reference to `_vsnprintf'
-/var/tmp//ccw7JfuR.o(.data+0x0):/usr/home/src/src/conftest.c:168: undefined reference to `_vsnprintf'
+/var/tmp//ccdthOq5.o(.text+0x9): In function `main':
+/usr/home/svn/pvpgn-lemon/src/conftest.c:168: undefined reference to `_vsnprintf'
+/var/tmp//ccdthOq5.o(.data+0x0):/usr/home/svn/pvpgn-lemon/src/conftest.c:168: undefined reference to `_vsnprintf'
 configure:9682: $? = 1
 configure: failed program was:
 | /* confdefs.h.  */
@@ -3910,9 +3910,9 @@ configure:9695: $? = 0
 configure:9707: result: yes
 configure:9619: checking for _snprintf
 configure:9676: gcc -o conftest -g -O2     -I/usr/local/include/mysql   -L/usr/local/lib/mysql conftest.c   -lm -lz -lmysqlclient >&5
-/var/tmp//cciHXDWq.o(.text+0x9): In function `main':
-/usr/home/src/src/conftest.c:169: undefined reference to `_snprintf'
-/var/tmp//cciHXDWq.o(.data+0x0):/usr/home/src/src/conftest.c:169: undefined reference to `_snprintf'
+/var/tmp//ccGrd5xy.o(.text+0x9): In function `main':
+/usr/home/svn/pvpgn-lemon/src/conftest.c:169: undefined reference to `_snprintf'
+/var/tmp//ccGrd5xy.o(.data+0x0):/usr/home/svn/pvpgn-lemon/src/conftest.c:169: undefined reference to `_snprintf'
 configure:9682: $? = 1
 configure: failed program was:
 | /* confdefs.h.  */
