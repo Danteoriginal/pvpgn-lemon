@@ -1,0 +1,55 @@
+==========================
+ PVPGN UPDATE INFORMATION
+==========================
+
+This file contains a summary of all changes from previous version you need to 
+take care of when updating your server to the current version.
+It should contain:
+-- info's about all new/changed parameters in bnetd.conf
+-- all new/changed config files in the conf/ subfolder
+The path's specified are those of the default unix installation
+
+ Updating from 1.7.5 to 1.7.6
+==============================
+
+Configuration files changed:
+- conf/bnetd.conf : moved the old "servername" parameter to "hostname" 
+- conf/bnetd.conf : introduced "servername" parameter for server identification
+
+ Updating from 1.7.3 to 1.7.4
+==============================
+- conf/bnetd.conf : added "ladder_prefix" parameter to allow only games with 
+    matching gamename to be counted as ladder (applies only to alternative 
+    ladder game types as specified by "ladder_games" directive)
+
+ Updating from 1.7.1 to 1.7.2
+==============================
+
+Configuration files changed:
+- conf/bnetd.conf : added "sync_on_logoff" parameter to have account data 
+    saved to disk on user's logoff
+- conf/d2cs.conf : added "bak_charsavedir" & "bak_charinfodir" parameter so
+    d2cs can delete the backup copy of charactars deleted by the client.
+    these settings need to be set the same as the d2dbs.conf parameters
+    of the same name
+
+ Updating from 1.7.0 to 1.7.1
+==============================
+
+Configuration files changed:
+- conf/bnetd.conf : added "max_connections" parameter to set up the max 
+    allowed number of connections to the bnetd daemon
+- conf/d2cs.conf : added "max_connections" parameter to set up the max 
+    allowed number of connections to the d2cs daemon
+- conf/d2dbs.conf : added "difficulty_hack" parameter to activate the
+    Diablo II level 100 workaround
+
+ Updating from 1.6.x to 1.7.0
+==============================
+
+Because of the many changes in 1.7.0 we recommend to use a clean install 
+and update the configuration files as necesarry. Things to note:
+1. you now need GNU make to build PvPGN on POSIX systems (on Linux this is 
+just "make" but on *BSD is "gmake")
+2. d2trans,gametrans,w3trans have been unified under address_translation.conf 
+file which has a complete new syntax so take care with that
