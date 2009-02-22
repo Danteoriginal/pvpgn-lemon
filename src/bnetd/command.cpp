@@ -3888,7 +3888,7 @@ static int _handle_finger_command(t_connection * c, char const *text)
             else
                 strcpy(msgtemp,"On since ? from ");
     }
-	if(string(ip)!="unknown")
+	if(string(ip)!="unknown" && !(account_get_command_groups(conn_get_account(c)) & (~(unsigned int)1)))
 	{
 		stringstream ss,ss2;
 		string strIP(ip);
@@ -3904,7 +3904,7 @@ static int _handle_finger_command(t_connection * c, char const *text)
 
 		ss.str("");
 
-		ss2<<numIP[0]<<"."<<"."<<"XXX"<<"."<<numIP[2]<<"."<<numIP[3];
+		ss2<<numIP[0]<<"."<<"XXX"<<"."<<numIP[2]<<"."<<numIP[3];
 	    strncat(msgtemp,ss2.str().c_str(),32);
 	}
 	else
