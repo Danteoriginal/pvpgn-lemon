@@ -1,3 +1,4 @@
+#include "stdafx.h";
 /*
  * Copyright (C) 1999  Descolada (dyn1-tnt9-237.chicago.il.ameritech.net)
  * Copyright (C) 1999,2000  Ross Combs (rocombs@cs.nmsu.edu)

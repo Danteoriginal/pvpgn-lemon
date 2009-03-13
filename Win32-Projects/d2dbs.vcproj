@@ -1,145 +1,202 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="7.10"
+	Version="9.00"
 	Name="d2dbs"
 	ProjectGUID="{300F80E0-1A0E-4639-AEB9-18A692FF35F2}"
 	RootNamespace="d2dbs"
-	Keyword="ManagedCProj">
+	Keyword="ManagedCProj"
+	TargetFrameworkVersion="131072"
+	>
 	<Platforms>
 		<Platform
-			Name="Win32"/>
+			Name="Win32"
+		/>
 	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
 			OutputDirectory="..\bin"
 			IntermediateDirectory="..\obj\$(ProjectName)_debug"
 			ConfigurationType="1"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			UseOfATL="0"
 			CharacterSet="2"
-			WholeProgramOptimization="TRUE">
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="2"
-				GlobalOptimizations="FALSE"
 				InlineFunctionExpansion="1"
-				EnableIntrinsicFunctions="FALSE"
+				EnableIntrinsicFunctions="false"
 				FavorSizeOrSpeed="1"
-				OmitFramePointers="TRUE"
-				OptimizeForProcessor="0"
-				OptimizeForWindowsApplication="TRUE"
+				OmitFramePointers="true"
 				AdditionalIncludeDirectories="../src;&quot;$(SolutionDir)/..&quot;"
 				PreprocessorDefinitions="_DEBUG;WIN32;WIN32_GUI"
-				StringPooling="TRUE"
+				StringPooling="true"
 				RuntimeLibrary="0"
 				StructMemberAlignment="1"
-				EnableFunctionLevelLinking="TRUE"
+				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="0"
 				WarningLevel="1"
-				Detect64BitPortabilityProblems="TRUE"
+				Detect64BitPortabilityProblems="true"
 				DebugInformationFormat="3"
 				CallingConvention="0"
-				CompileAs="1"/>
+				CompileAs="1"
+			/>
 			<Tool
-				Name="VCCustomBuildTool"/>
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				AdditionalIncludeDirectories="..\src\"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="ws2_32.lib"
 				OutputFile="$(OutDir)/$(ProjectName)_debug.exe"
 				LinkIncremental="1"
-				GenerateDebugInformation="TRUE"
+				GenerateDebugInformation="true"
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				TargetMachine="1"/>
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				TargetMachine="1"
+			/>
 			<Tool
-				Name="VCMIDLTool"/>
+				Name="VCALinkTool"
+			/>
 			<Tool
-				Name="VCPostBuildEventTool"/>
+				Name="VCManifestTool"
+			/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCXDCMakeTool"
+			/>
 			<Tool
-				Name="VCPreLinkEventTool"/>
+				Name="VCBscMakeTool"
+			/>
 			<Tool
-				Name="VCResourceCompilerTool"
-				AdditionalIncludeDirectories="..\src\"/>
+				Name="VCFxCopTool"
+			/>
 			<Tool
-				Name="VCWebServiceProxyGeneratorTool"/>
+				Name="VCAppVerifierTool"
+			/>
 			<Tool
-				Name="VCXMLDataGeneratorTool"/>
-			<Tool
-				Name="VCWebDeploymentTool"/>
-			<Tool
-				Name="VCManagedWrapperGeneratorTool"/>
-			<Tool
-				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+				Name="VCPostBuildEventTool"
+			/>
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="..\bin"
 			IntermediateDirectory="..\obj\$(ProjectName)"
 			ConfigurationType="1"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			UseOfATL="0"
 			CharacterSet="2"
-			WholeProgramOptimization="TRUE">
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="2"
-				GlobalOptimizations="FALSE"
 				InlineFunctionExpansion="1"
-				EnableIntrinsicFunctions="FALSE"
+				EnableIntrinsicFunctions="false"
 				FavorSizeOrSpeed="1"
-				OmitFramePointers="TRUE"
-				OptimizeForProcessor="0"
-				OptimizeForWindowsApplication="TRUE"
+				OmitFramePointers="true"
 				AdditionalIncludeDirectories="../src;&quot;$(SolutionDir)/..&quot;"
 				PreprocessorDefinitions="NDEBUG;WIN32"
-				StringPooling="TRUE"
+				StringPooling="true"
 				RuntimeLibrary="0"
 				StructMemberAlignment="1"
-				EnableFunctionLevelLinking="TRUE"
+				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="0"
 				WarningLevel="1"
-				Detect64BitPortabilityProblems="TRUE"
+				Detect64BitPortabilityProblems="true"
 				DebugInformationFormat="0"
 				CallingConvention="0"
-				CompileAs="1"/>
+				CompileAs="1"
+			/>
 			<Tool
-				Name="VCCustomBuildTool"/>
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				AdditionalIncludeDirectories="..\src\"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="ws2_32.lib"
 				OutputFile="$(OutDir)/$(ProjectName).exe"
 				LinkIncremental="1"
-				GenerateDebugInformation="FALSE"
+				GenerateDebugInformation="false"
 				SubSystem="1"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				TargetMachine="1"/>
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				TargetMachine="1"
+			/>
 			<Tool
-				Name="VCMIDLTool"/>
+				Name="VCALinkTool"
+			/>
 			<Tool
-				Name="VCPostBuildEventTool"/>
+				Name="VCManifestTool"
+			/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCXDCMakeTool"
+			/>
 			<Tool
-				Name="VCPreLinkEventTool"/>
+				Name="VCBscMakeTool"
+			/>
 			<Tool
-				Name="VCResourceCompilerTool"
-				AdditionalIncludeDirectories="..\src\"/>
+				Name="VCFxCopTool"
+			/>
 			<Tool
-				Name="VCWebServiceProxyGeneratorTool"/>
+				Name="VCAppVerifierTool"
+			/>
 			<Tool
-				Name="VCXMLDataGeneratorTool"/>
-			<Tool
-				Name="VCWebDeploymentTool"/>
-			<Tool
-				Name="VCManagedWrapperGeneratorTool"/>
-			<Tool
-				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+				Name="VCPostBuildEventTool"
+			/>
 		</Configuration>
 	</Configurations>
 	<References>
@@ -148,230 +205,291 @@
 		<Filter
 			Name="Source Files"
 			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
-			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
+			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
+			>
 			<Filter
 				Name="d2dbs"
-				Filter="">
+				>
 				<File
-					RelativePath="..\src\d2dbs\charlock.c">
+					RelativePath="..\src\d2dbs\charlock.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\d2dbs\cmdline_parse.c">
+					RelativePath="..\src\d2dbs\cmdline_parse.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\d2dbs\d2ladder.c">
+					RelativePath="..\src\d2dbs\d2ladder.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\d2dbs\dbsdupecheck.c">
+					RelativePath="..\src\d2dbs\dbsdupecheck.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\d2dbs\dbserver.c">
+					RelativePath="..\src\d2dbs\dbserver.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\d2dbs\dbspacket.c">
+					RelativePath="..\src\d2dbs\dbspacket.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\d2dbs\handle_signal.c">
+					RelativePath="..\src\d2dbs\handle_signal.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\d2dbs\main.c">
+					RelativePath="..\src\d2dbs\main.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\d2dbs\prefs.c">
+					RelativePath="..\src\d2dbs\prefs.cpp"
+					>
 				</File>
 			</Filter>
 			<Filter
 				Name="common"
-				Filter="">
+				>
 				<File
-					RelativePath="..\src\common\addr.c">
+					RelativePath="..\src\common\addr.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\bn_type.c">
+					RelativePath="..\src\common\bn_type.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\d2char_checksum.c">
+					RelativePath="..\src\common\d2char_checksum.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\eventlog.c">
+					RelativePath="..\src\common\eventlog.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\hexdump.c">
+					RelativePath="..\src\common\hexdump.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\list.c">
+					RelativePath="..\src\common\list.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\network.c">
+					RelativePath="..\src\common\network.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\packet.c">
+					RelativePath="..\src\common\packet.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\util.c">
+					RelativePath="..\src\common\util.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\xalloc.c">
+					RelativePath="..\src\common\xalloc.cpp"
+					>
 				</File>
 			</Filter>
 			<Filter
 				Name="compat"
-				Filter="">
+				>
 				<File
-					RelativePath="..\src\compat\inet_aton.c">
+					RelativePath="..\src\compat\inet_aton.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\psock.c">
+					RelativePath="..\src\compat\psock.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\strerror.c">
+					RelativePath="..\src\compat\strerror.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\strsep.c">
+					RelativePath="..\src\compat\strsep.cpp"
+					>
 				</File>
 			</Filter>
 			<Filter
 				Name="d2cs"
-				Filter="">
+				>
 				<File
-					RelativePath="..\src\d2cs\conf.c">
+					RelativePath="..\src\d2cs\conf.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\d2cs\xstring.c">
+					RelativePath="..\src\d2cs\xstring.cpp"
+					>
 				</File>
 			</Filter>
 			<Filter
 				Name="win32"
-				Filter="">
+				>
 				<File
-					RelativePath="..\src\win32\d2dbs_winmain.c">
+					RelativePath="..\src\win32\d2dbs_winmain.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\win32\service.c">
+					RelativePath="..\src\win32\service.cpp"
+					>
 				</File>
 			</Filter>
 		</Filter>
 		<Filter
 			Name="Header Files"
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
-			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
+			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
+			>
 			<Filter
 				Name="d2dbs"
-				Filter="">
+				>
 				<File
-					RelativePath="..\src\d2dbs\charlock.h">
+					RelativePath="..\src\d2dbs\charlock.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\d2dbs\cmdline_parse.h">
+					RelativePath="..\src\d2dbs\cmdline_parse.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\d2dbs\d2ladder.h">
+					RelativePath="..\src\d2dbs\d2ladder.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\d2dbs\dbsdupecheck.h">
+					RelativePath="..\src\d2dbs\dbsdupecheck.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\d2dbs\dbserver.h">
+					RelativePath="..\src\d2dbs\dbserver.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\d2dbs\dbspacket.h">
+					RelativePath="..\src\d2dbs\dbspacket.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\d2dbs\handle_signal.h">
+					RelativePath="..\src\d2dbs\handle_signal.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\d2dbs\prefs.h">
+					RelativePath="..\src\d2dbs\prefs.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\d2dbs\setup.h">
+					RelativePath="..\src\d2dbs\setup.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\d2dbs\version.h">
+					RelativePath="..\src\d2dbs\version.h"
+					>
 				</File>
 			</Filter>
 			<Filter
 				Name="common"
-				Filter="">
+				>
 				<File
-					RelativePath="..\src\common\addr.h">
+					RelativePath="..\src\common\addr.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\bn_type.h">
+					RelativePath="..\src\common\bn_type.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\d2char_checksum.h">
+					RelativePath="..\src\common\d2char_checksum.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\eventlog.h">
+					RelativePath="..\src\common\eventlog.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\hexdump.h">
+					RelativePath="..\src\common\hexdump.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\list.h">
+					RelativePath="..\src\common\list.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\network.h">
+					RelativePath="..\src\common\network.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\packet.h">
+					RelativePath="..\src\common\packet.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\util.h">
+					RelativePath="..\src\common\util.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\xalloc.h">
+					RelativePath="..\src\common\xalloc.h"
+					>
 				</File>
 			</Filter>
 			<Filter
 				Name="compat"
-				Filter="">
+				>
 				<File
-					RelativePath="..\src\compat\inet_aton.h">
+					RelativePath="..\src\compat\inet_aton.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\psock.h">
+					RelativePath="..\src\compat\psock.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\strerror.h">
+					RelativePath="..\src\compat\strerror.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\strsep.h">
+					RelativePath="..\src\compat\strsep.h"
+					>
 				</File>
 			</Filter>
 			<Filter
 				Name="d2cs"
-				Filter="">
+				>
 				<File
-					RelativePath="..\src\d2cs\conf.h">
+					RelativePath="..\src\d2cs\conf.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\d2cs\xstring.h">
+					RelativePath="..\src\d2cs\xstring.h"
+					>
 				</File>
 			</Filter>
 			<Filter
 				Name="win32"
-				Filter="">
+				>
 				<File
-					RelativePath="..\src\win32\service.h">
+					RelativePath="..\src\win32\service.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\win32\winmain.h">
+					RelativePath="..\src\win32\winmain.h"
+					>
 				</File>
 			</Filter>
 		</Filter>
 		<Filter
 			Name="Resource Files"
 			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx"
-			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}">
+			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
+			>
 			<File
-				RelativePath="..\src\win32\d2dbs_resource.h">
+				RelativePath="..\src\win32\d2dbs_resource.h"
+				>
 			</File>
 			<File
-				RelativePath="..\src\win32\d2dbs_resource.rc">
+				RelativePath="..\src\win32\d2dbs_resource.rc"
+				>
 			</File>
 			<File
-				RelativePath="..\src\win32\logo01.ico">
+				RelativePath="..\src\win32\logo01.ico"
+				>
 			</File>
 		</Filter>
 	</Files>

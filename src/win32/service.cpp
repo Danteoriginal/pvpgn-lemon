@@ -1,3 +1,4 @@
+#include "stdafx.h";
  /*
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -33,7 +34,7 @@ extern char serviceDescription[];
 extern int g_ServiceStatus;
 
 #ifdef WIN32_GUI
-extern int server_main(int argc, char *argv[]);
+extern int server_main(int argc, char * * argv);
 #else
 extern int main(int argc, char *argv[]);
 #endif
@@ -47,7 +48,7 @@ void Win32_ServiceInstall()
 {
 	SERVICE_DESCRIPTION sdBuf; 
     CSD_T ChangeServiceDescription;
-    HANDLE advapi32;
+    HMODULE advapi32;
 	SC_HANDLE serviceControlManager = OpenSCManager(0, 0, SC_MANAGER_CREATE_SERVICE);
 
 	if (serviceControlManager)

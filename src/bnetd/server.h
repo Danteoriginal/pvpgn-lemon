@@ -66,6 +66,8 @@ extern void server_restart_wraper(void);
 extern void server_save_wraper(void);
 extern int eventlog_startup(void);
 
+extern boost::threadpool::pool threadPool;
+
 
 #endif
 #endif

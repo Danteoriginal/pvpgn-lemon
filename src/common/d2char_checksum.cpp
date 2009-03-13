@@ -1,3 +1,4 @@
+#include "stdafx.h";
 /*
  * Copyright (C) 2000,2001	Onlyer	(onlyer@263.net)
  *

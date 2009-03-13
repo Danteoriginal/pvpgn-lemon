@@ -1,3 +1,4 @@
+#include "stdafx.h";
 /*
  * Copyright (C) 2000  Gediminas (gugini@fortas.ktu.lt)
  * Copyright (C) 2002  Bart³omiej Butyn (bartek@milc.com.pl)

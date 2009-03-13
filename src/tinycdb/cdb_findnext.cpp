@@ -1,3 +1,4 @@
+#include "stdafx.h";
 /* sequential cdb_find routines
  *
  * This file is a part of tinycdb package by Michael Tokarev, mjt@corpit.ru.

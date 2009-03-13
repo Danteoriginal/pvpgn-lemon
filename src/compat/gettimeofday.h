@@ -21,12 +21,18 @@
 #ifndef HAVE_GETTIMEOFDAY
 
 /* FIXME: these might already exist even if gettimeofday() doesn't */
+#ifdef _WIN32
+#include <WinSock2.h>
+#endif
+
+#ifndef _WIN32
 struct timeval
 {
     long tv_sec;
     long tv_usec;
 };
 
+#endif
 
 struct timezone
 {

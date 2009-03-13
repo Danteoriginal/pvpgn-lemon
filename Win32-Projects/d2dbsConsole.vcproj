@@ -153,98 +153,98 @@
 				Name="d2dbs"
 				Filter="">
 				<File
-					RelativePath="..\src\d2dbs\charlock.c">
+					RelativePath="..\src\d2dbs\charlock.cpp">
 				</File>
 				<File
-					RelativePath="..\src\d2dbs\cmdline_parse.c">
+					RelativePath="..\src\d2dbs\cmdline_parse.cpp">
 				</File>
 				<File
-					RelativePath="..\src\d2dbs\d2ladder.c">
+					RelativePath="..\src\d2dbs\d2ladder.cpp">
 				</File>
 				<File
-					RelativePath="..\src\d2dbs\dbsdupecheck.c">
+					RelativePath="..\src\d2dbs\dbsdupecheck.cpp">
 				</File>
 				<File
-					RelativePath="..\src\d2dbs\dbserver.c">
+					RelativePath="..\src\d2dbs\dbserver.cpp">
 				</File>
 				<File
-					RelativePath="..\src\d2dbs\dbspacket.c">
+					RelativePath="..\src\d2dbs\dbspacket.cpp">
 				</File>
 				<File
-					RelativePath="..\src\d2dbs\handle_signal.c">
+					RelativePath="..\src\d2dbs\handle_signal.cpp">
 				</File>
 				<File
-					RelativePath="..\src\d2dbs\main.c">
+					RelativePath="..\src\d2dbs\main.cpp">
 				</File>
 				<File
-					RelativePath="..\src\d2dbs\prefs.c">
+					RelativePath="..\src\d2dbs\prefs.cpp">
 				</File>
 			</Filter>
 			<Filter
 				Name="common"
 				Filter="">
 				<File
-					RelativePath="..\src\common\addr.c">
+					RelativePath="..\src\common\addr.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\bn_type.c">
+					RelativePath="..\src\common\bn_type.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\d2char_checksum.c">
+					RelativePath="..\src\common\d2char_checksum.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\eventlog.c">
+					RelativePath="..\src\common\eventlog.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\hexdump.c">
+					RelativePath="..\src\common\hexdump.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\list.c">
+					RelativePath="..\src\common\list.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\network.c">
+					RelativePath="..\src\common\network.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\packet.c">
+					RelativePath="..\src\common\packet.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\util.c">
+					RelativePath="..\src\common\util.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\xalloc.c">
+					RelativePath="..\src\common\xalloc.cpp">
 				</File>
 			</Filter>
 			<Filter
 				Name="compat"
 				Filter="">
 				<File
-					RelativePath="..\src\compat\inet_aton.c">
+					RelativePath="..\src\compat\inet_aton.cpp">
 				</File>
 				<File
-					RelativePath="..\src\compat\psock.c">
+					RelativePath="..\src\compat\psock.cpp">
 				</File>
 				<File
-					RelativePath="..\src\compat\strerror.c">
+					RelativePath="..\src\compat\strerror.cpp">
 				</File>
 				<File
-					RelativePath="..\src\compat\strsep.c">
+					RelativePath="..\src\compat\strsep.cpp">
 				</File>
 			</Filter>
 			<Filter
 				Name="d2cs"
 				Filter="">
 				<File
-					RelativePath="..\src\d2cs\conf.c">
+					RelativePath="..\src\d2cs\conf.cpp">
 				</File>
 				<File
-					RelativePath="..\src\d2cs\xstring.c">
+					RelativePath="..\src\d2cs\xstring.cpp">
 				</File>
 			</Filter>
 			<Filter
 				Name="win32"
 				Filter="">
 				<File
-					RelativePath="..\src\win32\service.c">
+					RelativePath="..\src\win32\service.cpp">
 				</File>
 			</Filter>
 		</Filter>

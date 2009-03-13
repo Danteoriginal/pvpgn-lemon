@@ -1,3 +1,4 @@
+#include "stdafx.h";
 /*
  * Copyright (C) 1999  Mark Baysinger (mbaysing@ucsd.edu)
  * Copyright (C) 2000  Ross Combs (rocombs@cs.nmsu.edu)

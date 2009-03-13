@@ -152,405 +152,405 @@
 				Name="bnetd"
 				Filter="">
 				<File
-					RelativePath="..\src\bnetd\account.c">
+					RelativePath="..\src\bnetd\account.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\account_wrap.c">
+					RelativePath="..\src\bnetd\account_wrap.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\adbanner.c">
+					RelativePath="..\src\bnetd\adbanner.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\alias_command.c">
+					RelativePath="..\src\bnetd\alias_command.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\anongame.c">
+					RelativePath="..\src\bnetd\anongame.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\anongame_gameresult.c">
+					RelativePath="..\src\bnetd\anongame_gameresult.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\anongame_infos.c">
+					RelativePath="..\src\bnetd\anongame_infos.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\anongame_maplists.c">
+					RelativePath="..\src\bnetd\anongame_maplists.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\attrgroup.c">
+					RelativePath="..\src\bnetd\attrgroup.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\attrlayer.c">
+					RelativePath="..\src\bnetd\attrlayer.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\autoupdate.c">
+					RelativePath="..\src\bnetd\autoupdate.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\channel.c">
+					RelativePath="..\src\bnetd\channel.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\channel_conv.c">
+					RelativePath="..\src\bnetd\channel_conv.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\character.c">
+					RelativePath="..\src\bnetd\character.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\clan.c">
+					RelativePath="..\src\bnetd\clan.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\cmdline.c">
+					RelativePath="..\src\bnetd\cmdline.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\command.c">
+					RelativePath="..\src\bnetd\command.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\command_groups.c">
+					RelativePath="..\src\bnetd\command_groups.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\connection.c">
+					RelativePath="..\src\bnetd\connection.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\file.c">
+					RelativePath="..\src\bnetd\file.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\file_cdb.c">
+					RelativePath="..\src\bnetd\file_cdb.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\file_plain.c">
+					RelativePath="..\src\bnetd\file_plain.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\friends.c">
+					RelativePath="..\src\bnetd\friends.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\game.c">
+					RelativePath="..\src\bnetd\game.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\game_conv.c">
+					RelativePath="..\src\bnetd\game_conv.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\handle_anongame.c">
+					RelativePath="..\src\bnetd\handle_anongame.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\handle_bnet.c">
+					RelativePath="..\src\bnetd\handle_bnet.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\handle_bot.c">
+					RelativePath="..\src\bnetd\handle_bot.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\handle_d2cs.c">
+					RelativePath="..\src\bnetd\handle_d2cs.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\handle_file.c">
+					RelativePath="..\src\bnetd\handle_file.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\handle_init.c">
+					RelativePath="..\src\bnetd\handle_init.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\handle_irc.c">
+					RelativePath="..\src\bnetd\handle_irc.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\handle_telnet.c">
+					RelativePath="..\src\bnetd\handle_telnet.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\handle_udp.c">
+					RelativePath="..\src\bnetd\handle_udp.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\helpfile.c">
+					RelativePath="..\src\bnetd\helpfile.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\ipban.c">
+					RelativePath="..\src\bnetd\ipban.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\irc.c">
+					RelativePath="..\src\bnetd\irc.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\ladder.c">
+					RelativePath="..\src\bnetd\ladder.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\ladder_binary.c">
+					RelativePath="..\src\bnetd\ladder_binary.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\ladder_calc.c">
+					RelativePath="..\src\bnetd\ladder_calc.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\mail.c">
+					RelativePath="..\src\bnetd\mail.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\main.c">
+					RelativePath="..\src\bnetd\main.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\message.c">
+					RelativePath="..\src\bnetd\message.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\news.c">
+					RelativePath="..\src\bnetd\news.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\output.c">
+					RelativePath="..\src\bnetd\output.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\prefs.c">
+					RelativePath="..\src\bnetd\prefs.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\realm.c">
+					RelativePath="..\src\bnetd\realm.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\runprog.c">
+					RelativePath="..\src\bnetd\runprog.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\server.c">
+					RelativePath="..\src\bnetd\server.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\sql_dbcreator.c">
+					RelativePath="..\src\bnetd\sql_dbcreator.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\sql_mysql.c">
+					RelativePath="..\src\bnetd\sql_mysql.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\sql_pgsql.c">
+					RelativePath="..\src\bnetd\sql_pgsql.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\storage.c">
+					RelativePath="..\src\bnetd\storage.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\storage_file.c">
+					RelativePath="..\src\bnetd\storage_file.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\storage_sql.c">
+					RelativePath="..\src\bnetd\storage_sql.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\support.c">
+					RelativePath="..\src\bnetd\support.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\team.c">
+					RelativePath="..\src\bnetd\team.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\tick.c">
+					RelativePath="..\src\bnetd\tick.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\timer.c">
+					RelativePath="..\src\bnetd\timer.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\topic.c">
+					RelativePath="..\src\bnetd\topic.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\tournament.c">
+					RelativePath="..\src\bnetd\tournament.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\tracker.c">
+					RelativePath="..\src\bnetd\tracker.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\udptest_send.c">
+					RelativePath="..\src\bnetd\udptest_send.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\versioncheck.c">
+					RelativePath="..\src\bnetd\versioncheck.cpp">
 				</File>
 				<File
-					RelativePath="..\src\bnetd\watch.c">
+					RelativePath="..\src\bnetd\watch.cpp">
 				</File>
 			</Filter>
 			<Filter
 				Name="common"
 				Filter="">
 				<File
-					RelativePath="..\src\common\addr.c">
+					RelativePath="..\src\common\addr.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\bn_type.c">
+					RelativePath="..\src\common\bn_type.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\bnethash.c">
+					RelativePath="..\src\common\bnethash.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\bnethashconv.c">
+					RelativePath="..\src\common\bnethashconv.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\bnettime.c">
+					RelativePath="..\src\common\bnettime.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\conf.c">
+					RelativePath="..\src\common\conf.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\eventlog.c">
+					RelativePath="..\src\common\eventlog.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\fdwatch.c">
+					RelativePath="..\src\common\fdwatch.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\fdwatch_epoll.c">
+					RelativePath="..\src\common\fdwatch_epoll.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\fdwatch_kqueue.c">
+					RelativePath="..\src\common\fdwatch_kqueue.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\fdwatch_poll.c">
+					RelativePath="..\src\common\fdwatch_poll.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\fdwatch_select.c">
+					RelativePath="..\src\common\fdwatch_select.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\give_up_root_privileges.c">
+					RelativePath="..\src\common\give_up_root_privileges.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\hashtable.c">
+					RelativePath="..\src\common\hashtable.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\hexdump.c">
+					RelativePath="..\src\common\hexdump.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\list.c">
+					RelativePath="..\src\common\list.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\network.c">
+					RelativePath="..\src\common\network.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\packet.c">
+					RelativePath="..\src\common\packet.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\proginfo.c">
+					RelativePath="..\src\common\proginfo.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\queue.c">
+					RelativePath="..\src\common\queue.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\rcm.c">
+					RelativePath="..\src\common\rcm.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\rlimit.c">
+					RelativePath="..\src\common\rlimit.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\tag.c">
+					RelativePath="..\src\common\tag.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\token.c">
+					RelativePath="..\src\common\token.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\trans.c">
+					RelativePath="..\src\common\trans.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\util.c">
+					RelativePath="..\src\common\util.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\xalloc.c">
+					RelativePath="..\src\common\xalloc.cpp">
 				</File>
 			</Filter>
 			<Filter
 				Name="compat"
 				Filter="">
 				<File
-					RelativePath="..\src\compat\difftime.c">
+					RelativePath="..\src\compat\difftime.cpp">
 				</File>
 				<File
-					RelativePath="..\src\compat\getopt.c">
+					RelativePath="..\src\compat\getopt.cpp">
 				</File>
 				<File
-					RelativePath="..\src\compat\gettimeofday.c">
+					RelativePath="..\src\compat\gettimeofday.cpp">
 				</File>
 				<File
-					RelativePath="..\src\compat\inet_aton.c">
+					RelativePath="..\src\compat\inet_aton.cpp">
 				</File>
 				<File
-					RelativePath="..\src\compat\inet_ntoa.c">
+					RelativePath="..\src\compat\inet_ntoa.cpp">
 				</File>
 				<File
-					RelativePath="..\src\compat\memcpy.c">
+					RelativePath="..\src\compat\memcpy.cpp">
 				</File>
 				<File
-					RelativePath="..\src\compat\memmove.c">
+					RelativePath="..\src\compat\memmove.cpp">
 				</File>
 				<File
-					RelativePath="..\src\compat\memset.c">
+					RelativePath="..\src\compat\memset.cpp">
 				</File>
 				<File
-					RelativePath="..\src\compat\mmap.c">
+					RelativePath="..\src\compat\mmap.cpp">
 				</File>
 				<File
-					RelativePath="..\src\compat\pdir.c">
+					RelativePath="..\src\compat\pdir.cpp">
 				</File>
 				<File
-					RelativePath="..\src\compat\psock.c">
+					RelativePath="..\src\compat\psock.cpp">
 				</File>
 				<File
-					RelativePath="..\src\compat\strcasecmp.c">
+					RelativePath="..\src\compat\strcasecmp.cpp">
 				</File>
 				<File
-					RelativePath="..\src\compat\strdup.c">
+					RelativePath="..\src\compat\strdup.cpp">
 				</File>
 				<File
-					RelativePath="..\src\compat\strerror.c">
+					RelativePath="..\src\compat\strerror.cpp">
 				</File>
 				<File
-					RelativePath="..\src\compat\strftime.c">
+					RelativePath="..\src\compat\strftime.cpp">
 				</File>
 				<File
-					RelativePath="..\src\compat\strncasecmp.c">
+					RelativePath="..\src\compat\strncasecmp.cpp">
 				</File>
 				<File
-					RelativePath="..\src\compat\strsep.c">
+					RelativePath="..\src\compat\strsep.cpp">
 				</File>
 				<File
-					RelativePath="..\src\compat\strtoul.c">
+					RelativePath="..\src\compat\strtoul.cpp">
 				</File>
 				<File
-					RelativePath="..\src\compat\uname.c">
+					RelativePath="..\src\compat\uname.cpp">
 				</File>
 			</Filter>
 			<Filter
 				Name="win32"
 				Filter="">
 				<File
-					RelativePath="..\src\win32\service.c">
+					RelativePath="..\src\win32\service.cpp">
 				</File>
 			</Filter>
 			<Filter
 				Name="tinycdb"
 				Filter="">
 				<File
-					RelativePath="..\src\tinycdb\cdb_find.c">
+					RelativePath="..\src\tinycdb\cdb_find.cpp">
 				</File>
 				<File
-					RelativePath="..\src\tinycdb\cdb_findnext.c">
+					RelativePath="..\src\tinycdb\cdb_findnext.cpp">
 				</File>
 				<File
-					RelativePath="..\src\tinycdb\cdb_hash.c">
+					RelativePath="..\src\tinycdb\cdb_hash.cpp">
 				</File>
 				<File
-					RelativePath="..\src\tinycdb\cdb_init.c">
+					RelativePath="..\src\tinycdb\cdb_init.cpp">
 				</File>
 				<File
-					RelativePath="..\src\tinycdb\cdb_make.c">
+					RelativePath="..\src\tinycdb\cdb_make.cpp">
 				</File>
 				<File
-					RelativePath="..\src\tinycdb\cdb_make_add.c">
+					RelativePath="..\src\tinycdb\cdb_make_add.cpp">
 				</File>
 				<File
-					RelativePath="..\src\tinycdb\cdb_make_find.c">
+					RelativePath="..\src\tinycdb\cdb_make_find.cpp">
 				</File>
 				<File
-					RelativePath="..\src\tinycdb\cdb_make_put.c">
+					RelativePath="..\src\tinycdb\cdb_make_put.cpp">
 				</File>
 				<File
-					RelativePath="..\src\tinycdb\cdb_seek.c">
+					RelativePath="..\src\tinycdb\cdb_seek.cpp">
 				</File>
 				<File
-					RelativePath="..\src\tinycdb\cdb_seq.c">
+					RelativePath="..\src\tinycdb\cdb_seq.cpp">
 				</File>
 				<File
-					RelativePath="..\src\tinycdb\cdb_unpack.c">
+					RelativePath="..\src\tinycdb\cdb_unpack.cpp">
 				</File>
 			</Filter>
 			<Filter
 				Name="zlib"
 				Filter="">
 				<File
-					RelativePath="..\src\zlib\pvpgn_adler32.c">
+					RelativePath="..\src\zlib\pvpgn_adler32.cpp">
 				</File>
 				<File
-					RelativePath="..\src\zlib\pvpgn_deflate.c">
+					RelativePath="..\src\zlib\pvpgn_deflate.cpp">
 				</File>
 				<File
-					RelativePath="..\src\zlib\pvpgn_trees.c">
+					RelativePath="..\src\zlib\pvpgn_trees.cpp">
 				</File>
 				<File
-					RelativePath="..\src\zlib\pvpgn_zutil.c">
+					RelativePath="..\src\zlib\pvpgn_zutil.cpp">
 				</File>
 			</Filter>
 		</Filter>

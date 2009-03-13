@@ -1,3 +1,4 @@
+#include "stdafx.h";
 /*
  * ++Copyright++ 1983, 1990, 1993
  * -

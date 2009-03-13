@@ -1,3 +1,4 @@
+#include "stdafx.h";
 /*
  * Copyright (C) 2004 Lector
  *

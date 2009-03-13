@@ -1,3 +1,4 @@
+#include "stdafx.h";
 /*
  * This file is a part of tinycdb package by Michael Tokarev, mjt@corpit.ru.
  * Public domain.

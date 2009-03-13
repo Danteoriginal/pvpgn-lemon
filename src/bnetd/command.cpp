@@ -1,3 +1,4 @@
+﻿#include "stdafx.h";
 /*
  * Copyright (C) 1998  Mark Baysinger (mbaysing@ucsd.edu)
  * Copyright (C) 1998,1999,2000,2001  Ross Combs (rocombs@cs.nmsu.edu)
@@ -518,7 +519,7 @@ char const * skip_command(char const * org_text)
 
 static int __INIT=1;
 
-hash_map<string	,t_command> _command;
+unordered_map< string	,t_command> _command;
 
 extern int handle_command(t_connection * c,  char const * text)
 {
@@ -543,7 +544,8 @@ extern int handle_command(t_connection * c,  char const * text)
 			break;
 	string com(text,text+i);
 	to_lower(com);
-	if(_command.find(com)!=_command.end())
+	BOOST_AUTO(commandIt, _command.find(com));
+	if(commandIt!=_command.end())
 	{
 		if (!(command_get_group(com.c_str())))
 		{
@@ -555,7 +557,7 @@ extern int handle_command(t_connection * c,  char const * text)
 			message_send_text(c,message_type_error,c,"This command is reserved for admins.");
 			return 0;
 		}
-		((_command.find(com)->second))(c,text);
+		commandIt->second(c,text);
 		return 0;
 	}
 
@@ -5043,24 +5045,21 @@ static int _handle_commandgroups_command(t_connection * c, char const * text)
     return 0;
 }
 
-static int _handle_topic_command(t_connection * c, char const * text)
+static int _handle_topic_command(t_connection * c, char const * _text)
 {
-    char const * channel_name;
-    char const * topic;
-    char * tmp;
+    string channel_name;
+    string topic;
     t_channel * channel;
     int  do_save = NO_SAVE_TOPIC;
+	string text(_text);
 
-    channel_name = skip_command(text);
-
-    if ((topic = strchr(channel_name,'"')))
+    channel_name = text.c_str();
+	BOOST_AUTO(topic_begin,find(text.begin(),text.end(),'"'));
+	BOOST_AUTO(topic_end,find(topic_begin + 1,text.end(),'"'));
+	if(topic_end != text.end())
     {
-        tmp = (char *)topic;
-        for (tmp--;tmp[0]==' ';tmp--);
-        tmp[1]='\0';
-        topic++;
-        tmp  = strchr(topic,'"');
-        if (tmp) tmp[0]='\0';
+		channel_name.assign(text.begin(),topic_begin);
+		topic.assign(topic_begin,topic_end - 1);
     }
 
     if (!(conn_get_channel(c))) {
@@ -5068,7 +5067,7 @@ static int _handle_topic_command(t_connection * c, char const * text)
         return -1;
     }
 
-    if(!(topic))
+    if(!(topic.length()))
     {
         if (channel_get_topic(channel_get_name(conn_get_channel(c))))
         {
@@ -5109,7 +5108,7 @@ static int _handle_topic_command(t_connection * c, char const * text)
         return -1;
     }
 
-  if (strlen(topic) >= MAX_TOPIC_LEN) 
+  if (topic.length() >= MAX_TOPIC_LEN) 
      { 
        sprintf(msgtemp,"max topic length exceeded (max %d symbols)", MAX_TOPIC_LEN); 
        message_send_text(c,message_type_error,c,msgtemp); 
@@ -5124,7 +5123,7 @@ static int _handle_topic_command(t_connection * c, char const * text)
 
     channel_name = channel_get_name(channel);
 
-    channel_set_topic(channel_name, topic, do_save);
+    channel_set_topic(channel_name.c_str(), topic.c_str(), do_save);
 
     sprintf(msgtemp,"%s topic: %s",channel_name, topic);
     message_send_text(c,message_type_info,c,msgtemp);
@@ -5452,6 +5451,7 @@ static int _handle_lgame_command(t_connection * c, char const *text)
 
 	if(check_ladder(account))message_send_text(c,message_type_info,c,"레더게임 가능합니다");
 	else message_send_text(c,message_type_info,c,"레더게임이 불가능합니다.");
+	return 0;
 }
 
 static int _handle_lwith_command(t_connection * c, char const *text)
@@ -5754,4 +5754,5 @@ static int _handle_teamcheck_command(t_connection * c, char const *text)
 static int _handle_imhackuser_command(t_connection * c, char const *text)
 {
 	ipbanlist_add(0,addr_num_to_ip_str(conn_get_addr(c)),0);
+	return 0;
 }

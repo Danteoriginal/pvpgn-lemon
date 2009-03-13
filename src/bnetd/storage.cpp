@@ -1,3 +1,4 @@
+#include "stdafx.h";
 /*
    * Copyright (C) 2002,2003 Mihai RUSU (dizzy@roedu.net)
    *
@@ -58,7 +59,7 @@ extern int storage_init(const char *spath)
     }
 
     temp = xstrdup(spath);
-    if ((p = strchr(spath, ':')) == NULL) {
+    if ((p = strchr(temp, ':')) == NULL) {
 	eventlog(eventlog_level_error, __FUNCTION__, "malformed storage_path , driver not found");
 	xfree((void*)temp);
 	return -1;
@@ -71,14 +72,14 @@ extern int storage_init(const char *spath)
     eventlog(eventlog_level_info, __FUNCTION__, "initializing storage layer (available drivers: %s)", dstr);
 
     *p = '\0';
-    if (strcasecmp(spath, "file") == 0) {
+    if (strncasecmp(spath, "file",4) == 0) {
 	storage = &storage_file;
 	res = storage->init(p + 1);
 	if (!res)
 	    eventlog(eventlog_level_info, __FUNCTION__, "using file storage driver");
     }
 #ifdef WITH_SQL
-    else if (strcasecmp(spath, "sql") == 0) {
+    else if (strncasecmp(spath, "sql",4) == 0) {
 	storage = &storage_sql;
 	res = storage->init(p + 1);
 	if (!res)

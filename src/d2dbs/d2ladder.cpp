@@ -1,3 +1,4 @@
+#include "stdafx.h";
 /*
  * Copyright (C) 2001		sousou	(liupeng.cs@263.net)
  *

@@ -1,3 +1,4 @@
+#include "stdafx.h";
 /*
  * Copyright (C) 1999,2000,2001  Ross Combs (rocombs@cs.nmsu.edu)
  * Copyright (C) 1999,2000  Rob Crittenden (rcrit@greyoak.com)

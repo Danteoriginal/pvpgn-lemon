@@ -1,146 +1,205 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="7.10"
+	Version="9.00"
 	Name="PvPGN"
 	ProjectGUID="{300F80E0-1A0E-4639-AEB9-18A692FF35F3}"
-	Keyword="Win32Proj">
+	RootNamespace="PvPGN"
+	Keyword="Win32Proj"
+	TargetFrameworkVersion="131072"
+	>
 	<Platforms>
 		<Platform
-			Name="Win32"/>
+			Name="Win32"
+		/>
 	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
 	<Configurations>
 		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="..\bin"
 			IntermediateDirectory="..\obj\$(ProjectName)"
 			ConfigurationType="1"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			UseOfATL="0"
 			CharacterSet="2"
-			WholeProgramOptimization="TRUE">
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="2"
-				GlobalOptimizations="FALSE"
 				InlineFunctionExpansion="1"
-				EnableIntrinsicFunctions="FALSE"
+				EnableIntrinsicFunctions="false"
 				FavorSizeOrSpeed="1"
-				OmitFramePointers="TRUE"
-				OptimizeForProcessor="0"
-				OptimizeForWindowsApplication="TRUE"
+				OmitFramePointers="true"
 				AdditionalIncludeDirectories="../src;&quot;$(SolutionDir)/..&quot;"
-				PreprocessorDefinitions="_CONSOLE;NDEBUG;WIN32;WIN32_GUI;_MBCS;WITH_SQL_MYSQL"
-				StringPooling="TRUE"
+				PreprocessorDefinitions="_CONSOLE;NDEBUG;WIN32;WIN32_GUI;_MBCS;WITHNOT_SQL_MYSQL"
+				StringPooling="true"
 				RuntimeLibrary="0"
-				StructMemberAlignment="1"
-				EnableFunctionLevelLinking="TRUE"
-				UsePrecompiledHeader="0"
+				StructMemberAlignment="0"
+				EnableFunctionLevelLinking="true"
+				UsePrecompiledHeader="2"
 				WarningLevel="1"
-				Detect64BitPortabilityProblems="TRUE"
+				Detect64BitPortabilityProblems="true"
 				DebugInformationFormat="0"
 				CallingConvention="0"
-				CompileAs="1"/>
+				CompileAs="2"
+			/>
 			<Tool
-				Name="VCCustomBuildTool"/>
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				AdditionalIncludeDirectories="..\src\"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalOptions="ws2_32.lib libmysql.lib"
+				AdditionalDependencies="ws2_32.lib"
 				OutputFile="$(OutDir)/$(ProjectName).exe"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories="..\src\win32"
-				GenerateDebugInformation="FALSE"
+				GenerateDebugInformation="false"
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				TargetMachine="1"/>
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				TargetMachine="1"
+			/>
 			<Tool
-				Name="VCMIDLTool"/>
+				Name="VCALinkTool"
+			/>
 			<Tool
-				Name="VCPostBuildEventTool"/>
+				Name="VCManifestTool"
+			/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCXDCMakeTool"
+			/>
 			<Tool
-				Name="VCPreLinkEventTool"/>
+				Name="VCBscMakeTool"
+			/>
 			<Tool
-				Name="VCResourceCompilerTool"
-				AdditionalIncludeDirectories="..\src\"/>
+				Name="VCFxCopTool"
+			/>
 			<Tool
-				Name="VCWebServiceProxyGeneratorTool"/>
+				Name="VCAppVerifierTool"
+			/>
 			<Tool
-				Name="VCXMLDataGeneratorTool"/>
-			<Tool
-				Name="VCWebDeploymentTool"/>
-			<Tool
-				Name="VCManagedWrapperGeneratorTool"/>
-			<Tool
-				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+				Name="VCPostBuildEventTool"
+			/>
 		</Configuration>
 		<Configuration
 			Name="Debug|Win32"
 			OutputDirectory="..\bin"
 			IntermediateDirectory="..\obj\$(ProjectName)_debug"
 			ConfigurationType="1"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			UseOfATL="0"
 			CharacterSet="2"
-			WholeProgramOptimization="TRUE">
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="2"
-				GlobalOptimizations="FALSE"
 				InlineFunctionExpansion="1"
-				EnableIntrinsicFunctions="FALSE"
+				EnableIntrinsicFunctions="false"
 				FavorSizeOrSpeed="1"
-				OmitFramePointers="TRUE"
-				OptimizeForProcessor="0"
-				OptimizeForWindowsApplication="TRUE"
+				OmitFramePointers="true"
 				AdditionalIncludeDirectories="../src/;&quot;$(SolutionDir)/..&quot;"
-				PreprocessorDefinitions="_CONSOLE;_DEBUG;WIN32;WIN32_GUI;_MBCS;WITH_SQL_MYSQL"
-				StringPooling="TRUE"
-				RuntimeLibrary="0"
-				StructMemberAlignment="1"
-				EnableFunctionLevelLinking="TRUE"
-				UsePrecompiledHeader="0"
+				PreprocessorDefinitions="_CONSOLE;_DEBUG;WIN32;WIN32_GUI;_MBCS;WITHNOT_SQL_MYSQL"
+				StringPooling="true"
+				RuntimeLibrary="1"
+				StructMemberAlignment="0"
+				EnableFunctionLevelLinking="true"
+				UsePrecompiledHeader="2"
 				WarningLevel="1"
-				Detect64BitPortabilityProblems="TRUE"
+				Detect64BitPortabilityProblems="true"
 				DebugInformationFormat="3"
 				CallingConvention="0"
-				CompileAs="1"/>
+				CompileAs="2"
+			/>
 			<Tool
-				Name="VCCustomBuildTool"/>
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				AdditionalIncludeDirectories="..\src\"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalOptions="ws2_32.lib libmysql.lib"
+				AdditionalDependencies="ws2_32.lib"
 				OutputFile="$(OutDir)/$(ProjectName)_debug.exe"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories="..\src\win32"
-				GenerateDebugInformation="TRUE"
+				IgnoreDefaultLibraryNames=""
+				GenerateDebugInformation="true"
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				TargetMachine="1"/>
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				TargetMachine="1"
+			/>
 			<Tool
-				Name="VCMIDLTool"/>
+				Name="VCALinkTool"
+			/>
 			<Tool
-				Name="VCPostBuildEventTool"/>
+				Name="VCManifestTool"
+			/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCXDCMakeTool"
+			/>
 			<Tool
-				Name="VCPreLinkEventTool"/>
+				Name="VCBscMakeTool"
+			/>
 			<Tool
-				Name="VCResourceCompilerTool"
-				AdditionalIncludeDirectories="..\src\"/>
+				Name="VCFxCopTool"
+			/>
 			<Tool
-				Name="VCWebServiceProxyGeneratorTool"/>
+				Name="VCAppVerifierTool"
+			/>
 			<Tool
-				Name="VCXMLDataGeneratorTool"/>
-			<Tool
-				Name="VCWebDeploymentTool"/>
-			<Tool
-				Name="VCManagedWrapperGeneratorTool"/>
-			<Tool
-				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+				Name="VCPostBuildEventTool"
+			/>
 		</Configuration>
 	</Configurations>
 	<References>
@@ -148,937 +207,1252 @@
 	<Files>
 		<Filter
 			Name="Source Files"
-			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm">
+			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm"
+			>
+			<File
+				RelativePath="..\src\stdafx.cpp"
+				>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"
+					/>
+				</FileConfiguration>
+			</File>
 			<Filter
 				Name="bnetd"
-				Filter="">
+				>
 				<File
-					RelativePath="..\src\bnetd\account.c">
+					RelativePath="..\src\bnetd\account.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\account_wrap.c">
+					RelativePath="..\src\bnetd\account_wrap.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\adbanner.c">
+					RelativePath="..\src\bnetd\adbanner.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\alias_command.c">
+					RelativePath="..\src\bnetd\alias_command.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\anongame.c">
+					RelativePath="..\src\bnetd\anongame.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\anongame_gameresult.c">
+					RelativePath="..\src\bnetd\anongame_gameresult.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\anongame_infos.c">
+					RelativePath="..\src\bnetd\anongame_infos.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\anongame_maplists.c">
+					RelativePath="..\src\bnetd\anongame_maplists.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\attrgroup.c">
-				</File>				
-				<File
-					RelativePath="..\src\bnetd\attrlayer.c">
-				</File>	
-				<File
-					RelativePath="..\src\bnetd\autoupdate.c">
+					RelativePath="..\src\bnetd\attrgroup.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\channel.c">
+					RelativePath="..\src\bnetd\attrlayer.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\channel_conv.c">
+					RelativePath="..\src\bnetd\autoupdate.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\character.c">
+					RelativePath="..\src\bnetd\channel.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\clan.c">
+					RelativePath="..\src\bnetd\channel_conv.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\cmdline.c">
+					RelativePath="..\src\bnetd\character.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\command.c">
+					RelativePath="..\src\bnetd\clan.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\command_groups.c">
+					RelativePath="..\src\bnetd\cmdline.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\connection.c">
+					RelativePath="..\src\bnetd\command.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\file.c">
+					RelativePath="..\src\bnetd\command_groups.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\file_cdb.c">
+					RelativePath="..\src\bnetd\connection.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\file_plain.c">
+					RelativePath="..\src\bnetd\file.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\friends.c">
+					RelativePath="..\src\bnetd\file_cdb.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\game.c">
+					RelativePath="..\src\bnetd\file_plain.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\game_conv.c">
+					RelativePath="..\src\bnetd\friends.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\handle_anongame.c">
+					RelativePath="..\src\bnetd\game.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\handle_bnet.c">
+					RelativePath="..\src\bnetd\game_conv.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\handle_bot.c">
+					RelativePath="..\src\bnetd\handle_anongame.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\handle_d2cs.c">
+					RelativePath="..\src\bnetd\handle_bnet.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\handle_file.c">
+					RelativePath="..\src\bnetd\handle_bot.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\handle_init.c">
+					RelativePath="..\src\bnetd\handle_d2cs.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\handle_irc.c">
+					RelativePath="..\src\bnetd\handle_file.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\handle_telnet.c">
+					RelativePath="..\src\bnetd\handle_init.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\handle_udp.c">
+					RelativePath="..\src\bnetd\handle_irc.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\helpfile.c">
+					RelativePath="..\src\bnetd\handle_telnet.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\ipban.c">
+					RelativePath="..\src\bnetd\handle_udp.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\irc.c">
+					RelativePath="..\src\bnetd\helpfile.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\ladder.c">
+					RelativePath="..\src\bnetd\ipban.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\ladder_binary.c">
+					RelativePath="..\src\bnetd\irc.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\ladder_calc.c">
+					RelativePath="..\src\bnetd\ladder.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\mail.c">
+					RelativePath="..\src\bnetd\ladder_binary.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\main.c">
+					RelativePath="..\src\bnetd\ladder_calc.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\message.c">
+					RelativePath="..\src\bnetd\mail.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\news.c">
+					RelativePath="..\src\bnetd\main.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\output.c">
+					RelativePath="..\src\bnetd\message.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\prefs.c">
+					RelativePath="..\src\bnetd\news.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\realm.c">
+					RelativePath="..\src\bnetd\output.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\runprog.c">
+					RelativePath="..\src\bnetd\prefs.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\server.c">
+					RelativePath="..\src\bnetd\realm.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\sql_dbcreator.c">
+					RelativePath="..\src\bnetd\runprog.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\sql_mysql.c">
+					RelativePath="..\src\bnetd\server.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\sql_pgsql.c">
+					RelativePath="..\src\bnetd\sql_dbcreator.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\storage.c">
+					RelativePath="..\src\bnetd\sql_mysql.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\storage_file.c">
+					RelativePath="..\src\bnetd\sql_pgsql.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\storage_sql.c">
+					RelativePath="..\src\bnetd\storage.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\support.c">
+					RelativePath="..\src\bnetd\storage_file.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\team.c">
+					RelativePath="..\src\bnetd\storage_sql.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\tick.c">
+					RelativePath="..\src\bnetd\support.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\timer.c">
+					RelativePath="..\src\bnetd\team.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\topic.c">
+					RelativePath="..\src\bnetd\tick.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\tournament.c">
+					RelativePath="..\src\bnetd\timer.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\tracker.c">
+					RelativePath="..\src\bnetd\topic.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\udptest_send.c">
+					RelativePath="..\src\bnetd\tournament.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\versioncheck.c">
+					RelativePath="..\src\bnetd\tracker.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\watch.c">
+					RelativePath="..\src\bnetd\udptest_send.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\src\bnetd\versioncheck.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\src\bnetd\watch.cpp"
+					>
 				</File>
 			</Filter>
 			<Filter
 				Name="common"
-				Filter="">
+				>
 				<File
-					RelativePath="..\src\common\addr.c">
+					RelativePath="..\src\common\addr.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\bn_type.c">
+					RelativePath="..\src\common\bn_type.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\bnethash.c">
+					RelativePath="..\src\common\bnethash.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\bnethashconv.c">
+					RelativePath="..\src\common\bnethashconv.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\bnettime.c">
+					RelativePath="..\src\common\bnettime.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\conf.c">
+					RelativePath="..\src\common\conf.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\eventlog.c">
+					RelativePath="..\src\common\eventlog.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\fdwatch.c">
+					RelativePath="..\src\common\fdwatch.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\fdwatch_epoll.c">
+					RelativePath="..\src\common\fdwatch_epoll.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\fdwatch_kqueue.c">
+					RelativePath="..\src\common\fdwatch_kqueue.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\fdwatch_poll.c">
+					RelativePath="..\src\common\fdwatch_poll.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\fdwatch_select.c">
+					RelativePath="..\src\common\fdwatch_select.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\give_up_root_privileges.c">
+					RelativePath="..\src\common\give_up_root_privileges.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\hashtable.c">
+					RelativePath="..\src\common\hashtable.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\hexdump.c">
+					RelativePath="..\src\common\hexdump.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\list.c">
+					RelativePath="..\src\common\list.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\network.c">
+					RelativePath="..\src\common\network.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\packet.c">
+					RelativePath="..\src\common\packet.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\proginfo.c">
+					RelativePath="..\src\common\proginfo.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\queue.c">
+					RelativePath="..\src\common\queue.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\rcm.c">
+					RelativePath="..\src\common\rcm.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\rlimit.c">
+					RelativePath="..\src\common\rlimit.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\tag.c">
+					RelativePath="..\src\common\tag.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\token.c">
+					RelativePath="..\src\common\token.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\trans.c">
+					RelativePath="..\src\common\trans.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\util.c">
+					RelativePath="..\src\common\util.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\xalloc.c">
+					RelativePath="..\src\common\xalloc.cpp"
+					>
 				</File>
 			</Filter>
 			<Filter
 				Name="compat"
-				Filter="">
+				>
 				<File
-					RelativePath="..\src\compat\difftime.c">
+					RelativePath="..\src\compat\difftime.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\getopt.c">
+					RelativePath="..\src\compat\getopt.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\gettimeofday.c">
+					RelativePath="..\src\compat\gettimeofday.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\inet_aton.c">
+					RelativePath="..\src\compat\inet_aton.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\inet_ntoa.c">
+					RelativePath="..\src\compat\inet_ntoa.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\memcpy.c">
+					RelativePath="..\src\compat\memcpy.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\memmove.c">
+					RelativePath="..\src\compat\memmove.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\memset.c">
+					RelativePath="..\src\compat\memset.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\mmap.c">
+					RelativePath="..\src\compat\mmap.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\pdir.c">
+					RelativePath="..\src\compat\pdir.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\psock.c">
+					RelativePath="..\src\compat\psock.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\strcasecmp.c">
+					RelativePath="..\src\compat\strcasecmp.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\strdup.c">
+					RelativePath="..\src\compat\strdup.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\strerror.c">
+					RelativePath="..\src\compat\strerror.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\strftime.c">
+					RelativePath="..\src\compat\strftime.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\strncasecmp.c">
+					RelativePath="..\src\compat\strncasecmp.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\strsep.c">
+					RelativePath="..\src\compat\strsep.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\strtoul.c">
+					RelativePath="..\src\compat\strtoul.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\uname.c">
+					RelativePath="..\src\compat\uname.cpp"
+					>
 				</File>
 			</Filter>
 			<Filter
 				Name="win32"
-				Filter="">
+				>
 				<File
-					RelativePath="..\src\win32\service.c">
+					RelativePath="..\src\win32\service.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\win32\winmain.c">
+					RelativePath="..\src\win32\winmain.cpp"
+					>
 				</File>
 			</Filter>
 			<Filter
 				Name="tinycdb"
-				Filter="">
+				>
 				<File
-					RelativePath="..\src\tinycdb\cdb_find.c">
+					RelativePath="..\src\tinycdb\cdb_find.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\tinycdb\cdb_findnext.c">
+					RelativePath="..\src\tinycdb\cdb_findnext.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\tinycdb\cdb_hash.c">
+					RelativePath="..\src\tinycdb\cdb_hash.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\tinycdb\cdb_init.c">
+					RelativePath="..\src\tinycdb\cdb_init.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\tinycdb\cdb_make.c">
+					RelativePath="..\src\tinycdb\cdb_make.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\tinycdb\cdb_make_add.c">
+					RelativePath="..\src\tinycdb\cdb_make_add.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\tinycdb\cdb_make_find.c">
+					RelativePath="..\src\tinycdb\cdb_make_find.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\tinycdb\cdb_make_put.c">
+					RelativePath="..\src\tinycdb\cdb_make_put.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\tinycdb\cdb_seek.c">
+					RelativePath="..\src\tinycdb\cdb_seek.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\tinycdb\cdb_seq.c">
+					RelativePath="..\src\tinycdb\cdb_seq.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\tinycdb\cdb_unpack.c">
+					RelativePath="..\src\tinycdb\cdb_unpack.cpp"
+					>
 				</File>
 			</Filter>
 			<Filter
 				Name="zlib"
-				Filter="">
+				>
 				<File
-					RelativePath="..\src\zlib\pvpgn_adler32.c">
+					RelativePath="..\src\zlib\pvpgn_adler32.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\zlib\pvpgn_deflate.c">
+					RelativePath="..\src\zlib\pvpgn_deflate.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\zlib\pvpgn_trees.c">
+					RelativePath="..\src\zlib\pvpgn_trees.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\zlib\pvpgn_zutil.c">
+					RelativePath="..\src\zlib\pvpgn_zutil.cpp"
+					>
 				</File>
 			</Filter>
 		</Filter>
 		<Filter
 			Name="Header Files"
-			Filter="h;hpp;hxx;hm;inl;inc">
+			Filter="h;hpp;hxx;hm;inl;inc"
+			>
 			<File
-				RelativePath="..\src\win32\resource.h">
+				RelativePath="..\src\win32\resource.h"
+				>
 			</File>
 			<Filter
 				Name="bnetd"
-				Filter="">
+				>
 				<File
-					RelativePath="..\src\bnetd\account.h">
+					RelativePath="..\src\bnetd\account.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\account_wrap.h">
+					RelativePath="..\src\bnetd\account_wrap.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\adbanner.h">
+					RelativePath="..\src\bnetd\adbanner.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\alias_command.h">
+					RelativePath="..\src\bnetd\alias_command.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\anongame.h">
+					RelativePath="..\src\bnetd\anongame.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\anongame_gameresult.h">
+					RelativePath="..\src\bnetd\anongame_gameresult.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\anongame_infos.h">
+					RelativePath="..\src\bnetd\anongame_infos.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\anongame_maplists.h">
+					RelativePath="..\src\bnetd\anongame_maplists.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\attr.h">
-				</File>	
-				<File
-					RelativePath="..\src\bnetd\attrgroup.h">
-				</File>				
-				<File
-					RelativePath="..\src\bnetd\attrlayer.h">
-				</File>					
-				<File
-					RelativePath="..\src\bnetd\autoupdate.h">
+					RelativePath="..\src\bnetd\attr.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\channel.h">
+					RelativePath="..\src\bnetd\attrgroup.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\channel_conv.h">
+					RelativePath="..\src\bnetd\attrlayer.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\character.h">
+					RelativePath="..\src\bnetd\autoupdate.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\clan.h">
+					RelativePath="..\src\bnetd\channel.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\cmdline.h">
+					RelativePath="..\src\bnetd\channel_conv.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\command.h">
+					RelativePath="..\src\bnetd\character.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\command_groups.h">
+					RelativePath="..\src\bnetd\clan.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\connection.h">
+					RelativePath="..\src\bnetd\cmdline.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\file.h">
+					RelativePath="..\src\bnetd\command.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\file_cdb.h">
+					RelativePath="..\src\bnetd\command_groups.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\file_plain.h">
+					RelativePath="..\src\bnetd\connection.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\friends.h">
+					RelativePath="..\src\bnetd\file.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\game.h">
+					RelativePath="..\src\bnetd\file_cdb.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\game_conv.h">
+					RelativePath="..\src\bnetd\file_plain.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\handle_anongame.h">
+					RelativePath="..\src\bnetd\friends.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\handle_bnet.h">
+					RelativePath="..\src\bnetd\game.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\handle_bot.h">
+					RelativePath="..\src\bnetd\game_conv.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\handle_d2cs.h">
+					RelativePath="..\src\bnetd\handle_anongame.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\handle_file.h">
+					RelativePath="..\src\bnetd\handle_bnet.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\handle_init.h">
+					RelativePath="..\src\bnetd\handle_bot.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\handle_irc.h">
+					RelativePath="..\src\bnetd\handle_d2cs.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\handle_telnet.h">
+					RelativePath="..\src\bnetd\handle_file.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\handle_udp.h">
+					RelativePath="..\src\bnetd\handle_init.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\handlers.h">
+					RelativePath="..\src\bnetd\handle_irc.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\helpfile.h">
+					RelativePath="..\src\bnetd\handle_telnet.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\ipban.h">
+					RelativePath="..\src\bnetd\handle_udp.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\irc.h">
+					RelativePath="..\src\bnetd\handlers.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\ladder.h">
+					RelativePath="..\src\bnetd\helpfile.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\ladder_binary.h">
+					RelativePath="..\src\bnetd\ipban.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\ladder_calc.h">
+					RelativePath="..\src\bnetd\irc.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\mail.h">
+					RelativePath="..\src\bnetd\ladder.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\message.h">
+					RelativePath="..\src\bnetd\ladder_binary.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\news.h">
+					RelativePath="..\src\bnetd\ladder_calc.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\output.h">
+					RelativePath="..\src\bnetd\mail.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\prefs.h">
+					RelativePath="..\src\bnetd\message.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\quota.h">
+					RelativePath="..\src\bnetd\news.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\realm.h">
+					RelativePath="..\src\bnetd\output.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\runprog.h">
+					RelativePath="..\src\bnetd\prefs.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\server.h">
+					RelativePath="..\src\bnetd\quota.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\sql_dbcreator.h">
+					RelativePath="..\src\bnetd\realm.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\sql_mysql.h">
+					RelativePath="..\src\bnetd\runprog.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\sql_pgsql.h">
+					RelativePath="..\src\bnetd\server.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\storage.h">
+					RelativePath="..\src\bnetd\sql_dbcreator.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\storage_file.h">
+					RelativePath="..\src\bnetd\sql_mysql.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\storage_sql.h">
+					RelativePath="..\src\bnetd\sql_pgsql.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\support.h">
+					RelativePath="..\src\bnetd\storage.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\team.h">
+					RelativePath="..\src\bnetd\storage_file.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\tick.h">
+					RelativePath="..\src\bnetd\storage_sql.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\timer.h">
+					RelativePath="..\src\bnetd\support.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\topic.h">
+					RelativePath="..\src\bnetd\team.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\tournament.h">
+					RelativePath="..\src\bnetd\tick.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\udptest_send.h">
+					RelativePath="..\src\bnetd\timer.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\versioncheck.h">
+					RelativePath="..\src\bnetd\topic.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\bnetd\watch.h">
+					RelativePath="..\src\bnetd\tournament.h"
+					>
+				</File>
+				<File
+					RelativePath="..\src\bnetd\udptest_send.h"
+					>
+				</File>
+				<File
+					RelativePath="..\src\bnetd\versioncheck.h"
+					>
+				</File>
+				<File
+					RelativePath="..\src\bnetd\watch.h"
+					>
 				</File>
 			</Filter>
 			<Filter
 				Name="common"
-				Filter="">
+				>
 				<File
-					RelativePath="..\src\common\addr.h">
+					RelativePath="..\src\common\addr.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\anongame_protocol.h">
+					RelativePath="..\src\common\anongame_protocol.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\auth_protocol.h">
+					RelativePath="..\src\common\auth_protocol.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\bn_type.h">
+					RelativePath="..\src\common\bn_type.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\bnet_protocol.h">
+					RelativePath="..\src\common\bnet_protocol.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\bnethash.h">
+					RelativePath="..\src\common\bnethash.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\bnethashconv.h">
+					RelativePath="..\src\common\bnethashconv.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\bnettime.h">
+					RelativePath="..\src\common\bnettime.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\bot_protocol.h">
+					RelativePath="..\src\common\bot_protocol.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\conf.h">
+					RelativePath="..\src\common\conf.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\d2game_protocol.h">
+					RelativePath="..\src\common\d2game_protocol.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\elist.h">
+					RelativePath="..\src\common\elist.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\eventlog.h">
+					RelativePath="..\src\common\eventlog.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\fdwatch.h">
+					RelativePath="..\src\common\fdwatch.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\fdwatch_epoll.h">
+					RelativePath="..\src\common\fdwatch_epoll.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\fdwatch_kqueue.h">
+					RelativePath="..\src\common\fdwatch_kqueue.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\fdwatch_poll.h">
+					RelativePath="..\src\common\fdwatch_poll.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\fdwatch_select.h">
+					RelativePath="..\src\common\fdwatch_select.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\field_sizes.h">
+					RelativePath="..\src\common\field_sizes.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\file_protocol.h">
+					RelativePath="..\src\common\file_protocol.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\flags.h">
+					RelativePath="..\src\common\flags.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\give_up_root_privileges.h">
+					RelativePath="..\src\common\give_up_root_privileges.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\hashtable.h">
+					RelativePath="..\src\common\hashtable.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\hexdump.h">
+					RelativePath="..\src\common\hexdump.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\init_protocol.h">
+					RelativePath="..\src\common\init_protocol.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\introtate.h">
+					RelativePath="..\src\common\introtate.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\irc_protocol.h">
+					RelativePath="..\src\common\irc_protocol.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\list.h">
+					RelativePath="..\src\common\list.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\network.h">
+					RelativePath="..\src\common\network.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\packet.h">
+					RelativePath="..\src\common\packet.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\proginfo.h">
+					RelativePath="..\src\common\proginfo.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\queue.h">
+					RelativePath="..\src\common\queue.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\rcm.h">
+					RelativePath="..\src\common\rcm.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\rlimit.h">
+					RelativePath="..\src\common\rlimit.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\setup_after.h">
+					RelativePath="..\src\common\setup_after.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\setup_before.h">
+					RelativePath="..\src\common\setup_before.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\tag.h">
+					RelativePath="..\src\common\tag.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\token.h">
+					RelativePath="..\src\common\token.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\tracker.h">
+					RelativePath="..\src\common\tracker.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\trans.h">
+					RelativePath="..\src\common\trans.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\udp_protocol.h">
+					RelativePath="..\src\common\udp_protocol.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\util.h">
+					RelativePath="..\src\common\util.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\version.h">
+					RelativePath="..\src\common\version.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\w3xp_protocol.h">
+					RelativePath="..\src\common\w3xp_protocol.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\xalloc.h">
+					RelativePath="..\src\common\xalloc.h"
+					>
 				</File>
 			</Filter>
 			<Filter
 				Name="compat"
-				Filter="">
+				>
 				<File
-					RelativePath="..\src\compat\access.h">
+					RelativePath="..\src\compat\access.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\char_bit.h">
+					RelativePath="..\src\compat\char_bit.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\difftime.h">
+					RelativePath="..\src\compat\difftime.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\exitstatus.h">
+					RelativePath="..\src\compat\exitstatus.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\gethostname.h">
+					RelativePath="..\src\compat\gethostname.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\getopt.h">
+					RelativePath="..\src\compat\getopt.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\gettimeofday.h">
+					RelativePath="..\src\compat\gettimeofday.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\inet_aton.h">
+					RelativePath="..\src\compat\inet_aton.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\inet_ntoa.h">
+					RelativePath="..\src\compat\inet_ntoa.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\memcpy.h">
+					RelativePath="..\src\compat\memcpy.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\memmove.h">
+					RelativePath="..\src\compat\memmove.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\memset.h">
+					RelativePath="..\src\compat\memset.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\mkdir.h">
+					RelativePath="..\src\compat\mkdir.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\mmap.h">
+					RelativePath="..\src\compat\mmap.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\netinet_in.h">
+					RelativePath="..\src\compat\netinet_in.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\pdir.h">
+					RelativePath="..\src\compat\pdir.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\psock.h">
+					RelativePath="..\src\compat\psock.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\read.h">
+					RelativePath="..\src\compat\read.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\recv.h">
+					RelativePath="..\src\compat\recv.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\seek.h">
+					RelativePath="..\src\compat\seek.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\send.h">
+					RelativePath="..\src\compat\send.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\signal.h">
+					RelativePath="..\src\compat\signal.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\socket.h">
+					RelativePath="..\src\compat\socket.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\statmacros.h">
+					RelativePath="..\src\compat\statmacros.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\stdfileno.h">
+					RelativePath="..\src\compat\stdfileno.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\strcasecmp.h">
+					RelativePath="..\src\compat\strcasecmp.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\strchr.h">
+					RelativePath="..\src\compat\strchr.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\strdup.h">
+					RelativePath="..\src\compat\strdup.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\strerror.h">
+					RelativePath="..\src\compat\strerror.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\strftime.h">
+					RelativePath="..\src\compat\strftime.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\strncasecmp.h">
+					RelativePath="..\src\compat\strncasecmp.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\strrchr.h">
+					RelativePath="..\src\compat\strrchr.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\strsep.h">
+					RelativePath="..\src\compat\strsep.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\strtoul.h">
+					RelativePath="..\src\compat\strtoul.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\termios.h">
+					RelativePath="..\src\compat\termios.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\uint.h">
+					RelativePath="..\src\compat\uint.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\uname.h">
+					RelativePath="..\src\compat\uname.h"
+					>
 				</File>
 			</Filter>
 			<Filter
 				Name="win32"
-				Filter="">
+				>
 				<File
-					RelativePath="..\src\win32\service.h">
+					RelativePath="..\src\win32\service.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\win32\winmain.h">
+					RelativePath="..\src\win32\winmain.h"
+					>
 				</File>
 			</Filter>
 			<Filter
 				Name="tinycdb"
-				Filter="">
+				>
 				<File
-					RelativePath="..\src\tinycdb\cdb_int.h">
+					RelativePath="..\src\tinycdb\cdb_int.h"
+					>
 				</File>
 			</Filter>
 			<Filter
 				Name="zlib"
-				Filter="">
+				>
 				<File
-					RelativePath="..\src\zlib\pvpgn_deflate.h">
+					RelativePath="..\src\zlib\pvpgn_deflate.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\zlib\pvpgn_trees.h">
+					RelativePath="..\src\zlib\pvpgn_trees.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\zlib\pvpgn_zconf.h">
+					RelativePath="..\src\zlib\pvpgn_zconf.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\zlib\pvpgn_zlib.h">
+					RelativePath="..\src\zlib\pvpgn_zlib.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\zlib\pvpgn_zutil.h">
+					RelativePath="..\src\zlib\pvpgn_zutil.h"
+					>
 				</File>
 			</Filter>
 		</Filter>
 		<Filter
 			Name="Resource Files"
-			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"
+			>
 			<File
-				RelativePath="..\src\win32\logo01.ico">
+				RelativePath="..\src\win32\logo01.ico"
+				>
 			</File>
 			<File
-				RelativePath="..\src\win32\resource.h">
+				RelativePath="..\src\win32\resource.h"
+				>
 			</File>
 			<File
-				RelativePath="..\src\win32\resource.rc">
+				RelativePath="..\src\win32\resource.rc"
+				>
 				<FileConfiguration
-					Name="Release|Win32">
+					Name="Release|Win32"
+					>
 					<Tool
 						Name="VCResourceCompilerTool"
-						AdditionalIncludeDirectories="$(SolutionDir)/.."/>
+						AdditionalIncludeDirectories="$(SolutionDir)/.."
+					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Debug|Win32">
+					Name="Debug|Win32"
+					>
 					<Tool
 						Name="VCResourceCompilerTool"
-						AdditionalIncludeDirectories="$(SolutionDir)/.."/>
+						AdditionalIncludeDirectories="$(SolutionDir)/.."
+					/>
 				</FileConfiguration>
 			</File>
 		</Filter>

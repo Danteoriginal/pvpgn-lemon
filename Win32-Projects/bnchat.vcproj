@@ -1,145 +1,203 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="7.10"
+	Version="9.00"
 	Name="bnchat"
 	ProjectGUID="{300F80E0-1A0E-4639-AEB9-18A692FF35F4}"
 	RootNamespace="bnchat"
-	Keyword="ManagedCProj">
+	Keyword="ManagedCProj"
+	TargetFrameworkVersion="131072"
+	>
 	<Platforms>
 		<Platform
-			Name="Win32"/>
+			Name="Win32"
+		/>
 	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
 			OutputDirectory="..\bin"
 			IntermediateDirectory="..\obj\$(ProjectName)_debug"
 			ConfigurationType="1"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			UseOfATL="0"
 			CharacterSet="2"
-			WholeProgramOptimization="TRUE">
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="2"
-				GlobalOptimizations="FALSE"
 				InlineFunctionExpansion="1"
-				EnableIntrinsicFunctions="FALSE"
+				EnableIntrinsicFunctions="false"
 				FavorSizeOrSpeed="1"
-				OmitFramePointers="TRUE"
-				OptimizeForProcessor="0"
-				OptimizeForWindowsApplication="TRUE"
+				OmitFramePointers="true"
 				AdditionalIncludeDirectories="../src;&quot;$(SolutionDir)/..&quot;"
 				PreprocessorDefinitions="_DEBUG;WIN32;_MBCS"
-				StringPooling="TRUE"
-				RuntimeLibrary="0"
+				StringPooling="true"
+				RuntimeLibrary="1"
 				StructMemberAlignment="1"
-				EnableFunctionLevelLinking="TRUE"
-				UsePrecompiledHeader="0"
+				EnableFunctionLevelLinking="true"
+				UsePrecompiledHeader="2"
 				WarningLevel="1"
-				Detect64BitPortabilityProblems="TRUE"
+				Detect64BitPortabilityProblems="true"
 				DebugInformationFormat="3"
 				CallingConvention="0"
-				CompileAs="1"/>
+				CompileAs="2"
+			/>
 			<Tool
-				Name="VCCustomBuildTool"/>
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				AdditionalIncludeDirectories="..\src\"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="ws2_32.lib"
 				OutputFile="$(OutDir)/$(ProjectName)_debug.exe"
 				LinkIncremental="1"
-				GenerateDebugInformation="TRUE"
+				IgnoreDefaultLibraryNames=""
+				GenerateDebugInformation="true"
 				SubSystem="1"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				TargetMachine="1"/>
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				TargetMachine="1"
+			/>
 			<Tool
-				Name="VCMIDLTool"/>
+				Name="VCALinkTool"
+			/>
 			<Tool
-				Name="VCPostBuildEventTool"/>
+				Name="VCManifestTool"
+			/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCXDCMakeTool"
+			/>
 			<Tool
-				Name="VCPreLinkEventTool"/>
+				Name="VCBscMakeTool"
+			/>
 			<Tool
-				Name="VCResourceCompilerTool"
-				AdditionalIncludeDirectories="..\src\"/>
+				Name="VCFxCopTool"
+			/>
 			<Tool
-				Name="VCWebServiceProxyGeneratorTool"/>
+				Name="VCAppVerifierTool"
+			/>
 			<Tool
-				Name="VCXMLDataGeneratorTool"/>
-			<Tool
-				Name="VCWebDeploymentTool"/>
-			<Tool
-				Name="VCManagedWrapperGeneratorTool"/>
-			<Tool
-				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+				Name="VCPostBuildEventTool"
+			/>
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="..\bin"
 			IntermediateDirectory="..\obj\$(ProjectName)"
 			ConfigurationType="1"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			UseOfATL="0"
 			CharacterSet="2"
-			WholeProgramOptimization="TRUE">
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="2"
-				GlobalOptimizations="FALSE"
 				InlineFunctionExpansion="1"
-				EnableIntrinsicFunctions="FALSE"
+				EnableIntrinsicFunctions="false"
 				FavorSizeOrSpeed="1"
-				OmitFramePointers="TRUE"
-				OptimizeForProcessor="0"
-				OptimizeForWindowsApplication="TRUE"
+				OmitFramePointers="true"
 				AdditionalIncludeDirectories="../src;&quot;$(SolutionDir)/..&quot;"
 				PreprocessorDefinitions="NDEBUG;WIN32"
-				StringPooling="TRUE"
+				StringPooling="true"
 				RuntimeLibrary="0"
 				StructMemberAlignment="1"
-				EnableFunctionLevelLinking="TRUE"
-				UsePrecompiledHeader="0"
+				EnableFunctionLevelLinking="true"
+				UsePrecompiledHeader="2"
 				WarningLevel="1"
-				Detect64BitPortabilityProblems="TRUE"
+				Detect64BitPortabilityProblems="true"
 				DebugInformationFormat="0"
 				CallingConvention="0"
-				CompileAs="1"/>
+				CompileAs="2"
+			/>
 			<Tool
-				Name="VCCustomBuildTool"/>
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				AdditionalIncludeDirectories="..\src\"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="ws2_32.lib"
 				OutputFile="$(OutDir)/$(ProjectName).exe"
 				LinkIncremental="1"
-				GenerateDebugInformation="FALSE"
+				GenerateDebugInformation="false"
 				SubSystem="1"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				TargetMachine="1"/>
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				TargetMachine="1"
+			/>
 			<Tool
-				Name="VCMIDLTool"/>
+				Name="VCALinkTool"
+			/>
 			<Tool
-				Name="VCPostBuildEventTool"/>
+				Name="VCManifestTool"
+			/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCXDCMakeTool"
+			/>
 			<Tool
-				Name="VCPreLinkEventTool"/>
+				Name="VCBscMakeTool"
+			/>
 			<Tool
-				Name="VCResourceCompilerTool"
-				AdditionalIncludeDirectories="..\src\"/>
+				Name="VCFxCopTool"
+			/>
 			<Tool
-				Name="VCWebServiceProxyGeneratorTool"/>
+				Name="VCAppVerifierTool"
+			/>
 			<Tool
-				Name="VCXMLDataGeneratorTool"/>
-			<Tool
-				Name="VCWebDeploymentTool"/>
-			<Tool
-				Name="VCManagedWrapperGeneratorTool"/>
-			<Tool
-				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+				Name="VCPostBuildEventTool"
+			/>
 		</Configuration>
 	</Configurations>
 	<References>
@@ -148,169 +206,239 @@
 		<Filter
 			Name="Source Files"
 			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
-			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
+			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
+			>
+			<File
+				RelativePath=".\stdafx.cpp"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"
+					/>
+				</FileConfiguration>
+			</File>
 			<Filter
 				Name="bnchat"
-				Filter="">
+				>
 				<File
-					RelativePath="..\src\client\bnchat.c">
+					RelativePath="..\src\client\bnchat.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\client\client.c">
+					RelativePath="..\src\client\client.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\client\client_connect.c">
+					RelativePath="..\src\client\client_connect.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\client\udptest.c">
+					RelativePath="..\src\client\udptest.cpp"
+					>
 				</File>
 			</Filter>
 			<Filter
 				Name="common"
-				Filter="">
+				>
 				<File
-					RelativePath="..\src\common\bn_type.c">
+					RelativePath="..\src\common\bn_type.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\bnethash.c">
+					RelativePath="..\src\common\bnethash.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\bnethashconv.c">
+					RelativePath="..\src\common\bnethashconv.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\bnettime.c">
+					RelativePath="..\src\common\bnettime.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\eventlog.c">
+					RelativePath="..\src\common\eventlog.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\hexdump.c">
+					RelativePath="..\src\common\hexdump.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\network.c">
+					RelativePath="..\src\common\network.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\packet.c">
+					RelativePath="..\src\common\packet.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\proginfo.c">
+					RelativePath="..\src\common\proginfo.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\queue.c">
+					RelativePath="..\src\common\queue.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\util.c">
+					RelativePath="..\src\common\util.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\xalloc.c">
+					RelativePath="..\src\common\xalloc.cpp"
+					>
 				</File>
 			</Filter>
 			<Filter
 				Name="compat"
-				Filter="">
+				>
 				<File
-					RelativePath="..\src\compat\gettimeofday.c">
+					RelativePath="..\src\compat\gettimeofday.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\inet_ntoa.c">
+					RelativePath="..\src\compat\inet_ntoa.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\psock.c">
+					RelativePath="..\src\compat\psock.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\strerror.c">
+					RelativePath="..\src\compat\strerror.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\vsnprintf.c">
+					RelativePath="..\src\compat\vsnprintf.cpp"
+					>
 				</File>
 			</Filter>
 		</Filter>
 		<Filter
 			Name="Header Files"
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
-			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
+			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
+			>
+			<File
+				RelativePath=".\stdafx.h"
+				>
+			</File>
 			<Filter
 				Name="common"
-				Filter="">
+				>
 				<File
-					RelativePath="..\src\common\bn_type.h">
+					RelativePath="..\src\common\bn_type.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\bnethash.h">
+					RelativePath="..\src\common\bnethash.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\bnethashconv.h">
+					RelativePath="..\src\common\bnethashconv.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\bnettime.h">
+					RelativePath="..\src\common\bnettime.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\eventlog.h">
+					RelativePath="..\src\common\eventlog.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\hexdump.h">
+					RelativePath="..\src\common\hexdump.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\network.h">
+					RelativePath="..\src\common\network.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\packet.h">
+					RelativePath="..\src\common\packet.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\proginfo.h">
+					RelativePath="..\src\common\proginfo.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\queue.h">
+					RelativePath="..\src\common\queue.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\setup_before.h">
+					RelativePath="..\src\common\setup_before.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\util.h">
+					RelativePath="..\src\common\util.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\xalloc.h">
+					RelativePath="..\src\common\xalloc.h"
+					>
 				</File>
 			</Filter>
 			<Filter
 				Name="compat"
-				Filter="">
+				>
 				<File
-					RelativePath="..\src\compat\gettimeofday.h">
+					RelativePath="..\src\compat\gettimeofday.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\inet_ntoa.h">
+					RelativePath="..\src\compat\inet_ntoa.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\psock.h">
+					RelativePath="..\src\compat\psock.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\strerror.h">
+					RelativePath="..\src\compat\strerror.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\vsnprintf.h">
+					RelativePath="..\src\compat\vsnprintf.h"
+					>
 				</File>
 			</Filter>
 			<Filter
 				Name="bnchat"
-				Filter="">
+				>
 				<File
-					RelativePath="..\src\client\client.h">
+					RelativePath="..\src\client\client.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\client\client_connect.h">
+					RelativePath="..\src\client\client_connect.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\client\udptest.h">
+					RelativePath="..\src\client\udptest.h"
+					>
 				</File>
 			</Filter>
 		</Filter>
 		<Filter
 			Name="Resource Files"
 			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx"
-			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}">
+			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
+			>
 			<File
-				RelativePath="..\src\win32\console_resource.rc">
+				RelativePath="..\src\win32\console_resource.rc"
+				>
 			</File>
 		</Filter>
 	</Files>

@@ -1,3 +1,4 @@
+#include "stdafx.h";
 /*
  * Copyright (C) 1998,1999  Mark Baysinger (mbaysing@ucsd.edu)
  * Copyright (C) 1998,1999,2000,2001  Ross Combs (rocombs@cs.nmsu.edu)
@@ -172,6 +173,8 @@ static volatile int do_save=0;
 static volatile int got_epipe=0;
 static char const * server_hostname=NULL;
 
+boost::threadpool::pool threadPool;
+
 extern void server_quit_delay(int delay)
 {
     /* getting negative delay is ok too because it will force immediate
@@ -339,7 +342,7 @@ static int sd_accept(t_addr const * curr_laddr, t_laddr_info const * laddr_info,
     {
         int val=1;
 
-        if (psock_setsockopt(csocket,PSOCK_SOL_SOCKET,PSOCK_SO_KEEPALIVE,&val,(psock_t_socklen)sizeof(val))<0)
+        if (psock_setsockopt(csocket,PSOCK_SOL_SOCKET,PSOCK_SO_KEEPALIVE,(const char*)&val,(psock_t_socklen)sizeof(val))<0)
             eventlog(eventlog_level_error,__FUNCTION__,"[%d] could not set socket option SO_KEEPALIVE (psock_setsockopt: %s)",csocket,pstrerror(psock_errno()));
         /* not a fatal error */
     }
@@ -448,7 +451,7 @@ static int sd_udpinput(t_addr * const curr_laddr, t_laddr_info const * laddr_inf
 
     err = 0;
     errlen = sizeof(err);
-    if (psock_getsockopt(usocket,PSOCK_SOL_SOCKET,PSOCK_SO_ERROR,&err,&errlen)<0)
+    if (psock_getsockopt(usocket,PSOCK_SOL_SOCKET,PSOCK_SO_ERROR,(char*)&err,&errlen)<0)
     {
         eventlog(eventlog_level_error,__FUNCTION__,"[%d] unable to read socket error (psock_getsockopt: %s)",usocket,pstrerror(psock_errno()));
         return -1;
@@ -947,7 +950,7 @@ static int _set_reuseaddr(int sock)
 {
     int val = 1;
 
-    return psock_setsockopt(sock,PSOCK_SOL_SOCKET,PSOCK_SO_REUSEADDR,&val,(psock_t_socklen)sizeof(int));
+    return psock_setsockopt(sock,PSOCK_SOL_SOCKET,PSOCK_SO_REUSEADDR,(const char*)&val,(psock_t_socklen)sizeof(int));
 }
 
 static int _bind_socket(int sock, unsigned addr, short port)

@@ -16,6 +16,8 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
+#pragma warning(disable: 4819) 
+
 #ifdef INCLUDED_SETUP_AFTER_H
 # error "This file must be included before all other header files"
 #endif
@@ -36,6 +38,7 @@
  */
 
 #include "version.h"
+#include "compat/strncasecmp.h"
 
 /***************************************************************/
 /* Debugging options */
@@ -410,7 +413,6 @@ bool haveit(_data &data,_value value)
 #include <boost/multi_index/ordered_index.hpp>
 #include <boost/multi_index/member.hpp>
 #include <boost/shared_ptr.hpp>
-#include <boost/shared_ptr.hpp>
 #include <boost/algorithm/string/case_conv.hpp>
 //#include <boost/algorithm/string/regex.hpp>
 #include <boost/algorithm/string/replace.hpp>
@@ -419,18 +421,20 @@ bool haveit(_data &data,_value value)
 #include <boost/bind.hpp>
 #include <boost/thread/condition.hpp>
 #include <boost/thread/once.hpp>
+#include <unordered_map>
 
 #include <sstream>
-#include <ext/hash_map>
 #include <vector>
 #include <deque>
+#include <unordered_map>
 #include <threadpool.hpp>
+
+using std::tr1::unordered_map;
 
 using boost::multi_index_container;
 using std::string;
 using std::deque;
 using std::vector;
-using __gnu_cxx::hash_map;
 using boost::algorithm::to_lower;
 using boost::algorithm::replace_all;
 using namespace boost::multi_index;
@@ -441,6 +445,10 @@ using boost::condition;
 using boost::function;
 using std::auto_ptr;
 using boost::shared_ptr;
+#ifndef _MSC_VER
+#include <ext/hash_map>
+using __gnu_cxx::hash_map;
+#endif
 
 struct tag_seq{};
 struct tag_id{};
@@ -452,6 +460,7 @@ struct tag_tcp_sock{};
 struct tag_tcp_addr{};
 struct tag_clienttag{};
 
+#ifndef _MSC_VER
 namespace __gnu_cxx
 {
 	template<>
@@ -463,6 +472,7 @@ namespace __gnu_cxx
 		}
 	};
 };
+#endif
 
 static recursive_mutex M;
 #endif

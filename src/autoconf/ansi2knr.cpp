@@ -1,3 +1,4 @@
+#include "stdafx.h";
 /* Copyright (C) 1989, 2000 Aladdin Enterprises.  All rights reserved. */
 
 /*$Id: ansi2knr.c,v 1.2 2005/02/10 08:31:08 pandaemonium Exp $*/

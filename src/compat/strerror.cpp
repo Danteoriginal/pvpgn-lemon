@@ -1,3 +1,4 @@
+#include "stdafx.h";
 /*
  * Copyright (C) 1999  Ross Combs (rocombs@cs.nmsu.edu)
  *
@@ -344,12 +345,12 @@ extern char const * pstrerror(int errornum)
     case WSATRY_AGAIN:		return "Nonauthoriative host not found";
     case WSANO_RECOVERY:	return "This is a nonrecoverable error";
     case WSANO_DATA:		return "Valid name, no data record of requested type";
-    case WSA_INVALID_HANDLE:	return "Specified event object handle is invalid";
-    case WSA_INVALID_PARAMETER:	return "One or more parameters are invalid";
-    case WSA_IO_INCOMPLETE:	return "Overlapped I/O event object not in signaled state";
-    case WSA_IO_PENDING:	return "Overlapped operation will complete later";
-    case WSA_NOT_ENOUGH_MEMORY:	return "Insufficient memory available";
-    case WSA_OPERATION_ABORTED:	return "Overlapped operation aborted";
+//    case WSA_INVALID_HANDLE:	return "Specified event object handle is invalid";
+//    case WSA_INVALID_PARAMETER:	return "One or more parameters are invalid";
+//    case WSA_IO_INCOMPLETE:	return "Overlapped I/O event object not in signaled state";
+//    case WSA_IO_PENDING:	return "Overlapped operation will complete later";
+//    case WSA_NOT_ENOUGH_MEMORY:	return "Insufficient memory available";
+//    case WSA_OPERATION_ABORTED:	return "Overlapped operation aborted";
     case WSASYSCALLFAILURE:	return "System call failure";
     default: return strerror(errornum);
 	}

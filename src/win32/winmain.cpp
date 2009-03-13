@@ -1,3 +1,4 @@
+#include "stdafx.h";
 /*
  * Copyright (C) 2001  Erik Latoshek [forester] (laterk@inbox.lv)
  *
@@ -46,7 +47,7 @@
 
 #define WM_SHELLNOTIFY          (WM_USER+1)
 
-extern int server_main(int, char*[]);
+extern int server_main(int, char * * argv);
 
 static void	guiThread(void*);
 static void	guiAddText(const char *, COLORREF);
@@ -586,9 +587,9 @@ extern void guiOnUpdateUserList()
 	
 	SendMessage(gui.hwndUsers, LB_RESETCONTENT, 0, 0);
 	
-	LIST_TRAVERSE_CONST(connlist(),curr)
+	BEGIN(it,connlist())
 	{
-		if (!(c = elem_get_data(curr))) continue;
+		if (!(c = *it)) continue;
 		if (!(acc = conn_get_account(c))) continue;
 		
 		SendMessage(gui.hwndUsers, LB_ADDSTRING, 0, (LPARAM)account_get_name(acc));

@@ -1,3 +1,4 @@
+#include "stdafx.h";
 /*
   * Abstraction API/layer for the various ways PvPGN can inspect sockets state
   * 2003 (C) dizzy@roedu.net

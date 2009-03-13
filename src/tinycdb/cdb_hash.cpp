@@ -1,3 +1,4 @@
+#include "stdafx.h";
 /* cdb hashing routine
  *
  * This file is a part of tinycdb package by Michael Tokarev, mjt@corpit.ru.

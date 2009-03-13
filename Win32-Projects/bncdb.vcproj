@@ -1,143 +1,200 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="7.10"
+	Version="9.00"
 	Name="bncdb"
 	ProjectGUID="{300F80E0-1A0E-4639-AEB9-18A692FF35F0}"
 	RootNamespace="bncdb"
-	Keyword="ManagedCProj">
+	Keyword="ManagedCProj"
+	TargetFrameworkVersion="131072"
+	>
 	<Platforms>
 		<Platform
-			Name="Win32"/>
+			Name="Win32"
+		/>
 	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
 			OutputDirectory="..\bin"
 			IntermediateDirectory="..\obj\$(ProjectName)_debug"
 			ConfigurationType="1"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			UseOfATL="0"
 			CharacterSet="2"
-			WholeProgramOptimization="TRUE">
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="2"
-				GlobalOptimizations="FALSE"
 				InlineFunctionExpansion="1"
-				EnableIntrinsicFunctions="FALSE"
+				EnableIntrinsicFunctions="false"
 				FavorSizeOrSpeed="1"
-				OmitFramePointers="TRUE"
-				OptimizeForProcessor="0"
-				OptimizeForWindowsApplication="TRUE"
+				OmitFramePointers="true"
 				AdditionalIncludeDirectories="../src;&quot;$(SolutionDir)/..&quot;"
 				PreprocessorDefinitions="_DEBUG;WIN32"
-				StringPooling="TRUE"
+				StringPooling="true"
 				RuntimeLibrary="0"
 				StructMemberAlignment="1"
-				EnableFunctionLevelLinking="TRUE"
+				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="0"
 				WarningLevel="1"
-				Detect64BitPortabilityProblems="TRUE"
+				Detect64BitPortabilityProblems="true"
 				DebugInformationFormat="3"
 				CallingConvention="0"
-				CompileAs="1"/>
+				CompileAs="2"
+			/>
 			<Tool
-				Name="VCCustomBuildTool"/>
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				AdditionalIncludeDirectories="..\src\"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
 			<Tool
 				Name="VCLinkerTool"
 				OutputFile="$(OutDir)/$(ProjectName)_debug.exe"
 				LinkIncremental="1"
-				GenerateDebugInformation="TRUE"
+				GenerateDebugInformation="true"
 				SubSystem="1"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				TargetMachine="1"/>
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				TargetMachine="1"
+			/>
 			<Tool
-				Name="VCMIDLTool"/>
+				Name="VCALinkTool"
+			/>
 			<Tool
-				Name="VCPostBuildEventTool"/>
+				Name="VCManifestTool"
+			/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCXDCMakeTool"
+			/>
 			<Tool
-				Name="VCPreLinkEventTool"/>
+				Name="VCBscMakeTool"
+			/>
 			<Tool
-				Name="VCResourceCompilerTool"
-				AdditionalIncludeDirectories="..\src\"/>
+				Name="VCFxCopTool"
+			/>
 			<Tool
-				Name="VCWebServiceProxyGeneratorTool"/>
+				Name="VCAppVerifierTool"
+			/>
 			<Tool
-				Name="VCXMLDataGeneratorTool"/>
-			<Tool
-				Name="VCWebDeploymentTool"/>
-			<Tool
-				Name="VCManagedWrapperGeneratorTool"/>
-			<Tool
-				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+				Name="VCPostBuildEventTool"
+			/>
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="..\bin"
 			IntermediateDirectory="..\obj\$(ProjectName)"
 			ConfigurationType="1"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			UseOfATL="0"
 			CharacterSet="2"
-			WholeProgramOptimization="TRUE">
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="2"
-				GlobalOptimizations="FALSE"
 				InlineFunctionExpansion="1"
-				EnableIntrinsicFunctions="FALSE"
+				EnableIntrinsicFunctions="false"
 				FavorSizeOrSpeed="1"
-				OmitFramePointers="TRUE"
-				OptimizeForProcessor="0"
-				OptimizeForWindowsApplication="TRUE"
+				OmitFramePointers="true"
 				AdditionalIncludeDirectories="../src;&quot;$(SolutionDir)/..&quot;"
 				PreprocessorDefinitions="NDEBUG;WIN32"
-				StringPooling="TRUE"
+				StringPooling="true"
 				RuntimeLibrary="0"
 				StructMemberAlignment="1"
-				EnableFunctionLevelLinking="TRUE"
+				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="0"
 				WarningLevel="1"
-				Detect64BitPortabilityProblems="TRUE"
+				Detect64BitPortabilityProblems="true"
 				DebugInformationFormat="0"
 				CallingConvention="0"
-				CompileAs="1"/>
+				CompileAs="2"
+			/>
 			<Tool
-				Name="VCCustomBuildTool"/>
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				AdditionalIncludeDirectories="..\src\"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
 			<Tool
 				Name="VCLinkerTool"
 				OutputFile="$(OutDir)/$(ProjectName).exe"
 				LinkIncremental="1"
-				GenerateDebugInformation="FALSE"
+				GenerateDebugInformation="false"
 				SubSystem="1"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				TargetMachine="1"/>
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				TargetMachine="1"
+			/>
 			<Tool
-				Name="VCMIDLTool"/>
+				Name="VCALinkTool"
+			/>
 			<Tool
-				Name="VCPostBuildEventTool"/>
+				Name="VCManifestTool"
+			/>
 			<Tool
-				Name="VCPreBuildEventTool"/>
+				Name="VCXDCMakeTool"
+			/>
 			<Tool
-				Name="VCPreLinkEventTool"/>
+				Name="VCBscMakeTool"
+			/>
 			<Tool
-				Name="VCResourceCompilerTool"
-				AdditionalIncludeDirectories="..\src\"/>
+				Name="VCFxCopTool"
+			/>
 			<Tool
-				Name="VCWebServiceProxyGeneratorTool"/>
+				Name="VCAppVerifierTool"
+			/>
 			<Tool
-				Name="VCXMLDataGeneratorTool"/>
-			<Tool
-				Name="VCWebDeploymentTool"/>
-			<Tool
-				Name="VCManagedWrapperGeneratorTool"/>
-			<Tool
-				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+				Name="VCPostBuildEventTool"
+			/>
 		</Configuration>
 	</Configurations>
 	<References>
@@ -146,121 +203,151 @@
 		<Filter
 			Name="Source Files"
 			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
-			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
+			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
+			>
 			<Filter
 				Name="bncdb"
-				Filter="">
+				>
 				<File
-					RelativePath="..\src\tinycdb\cdb.c">
+					RelativePath="..\src\tinycdb\cdb.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\tinycdb\cdb_find.c">
+					RelativePath="..\src\tinycdb\cdb_find.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\tinycdb\cdb_findnext.c">
+					RelativePath="..\src\tinycdb\cdb_findnext.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\tinycdb\cdb_hash.c">
+					RelativePath="..\src\tinycdb\cdb_hash.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\tinycdb\cdb_init.c">
+					RelativePath="..\src\tinycdb\cdb_init.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\tinycdb\cdb_make.c">
+					RelativePath="..\src\tinycdb\cdb_make.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\tinycdb\cdb_make_add.c">
+					RelativePath="..\src\tinycdb\cdb_make_add.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\tinycdb\cdb_make_find.c">
+					RelativePath="..\src\tinycdb\cdb_make_find.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\tinycdb\cdb_make_put.c">
+					RelativePath="..\src\tinycdb\cdb_make_put.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\tinycdb\cdb_seek.c">
+					RelativePath="..\src\tinycdb\cdb_seek.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\tinycdb\cdb_seq.c">
+					RelativePath="..\src\tinycdb\cdb_seq.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\tinycdb\cdb_unpack.c">
+					RelativePath="..\src\tinycdb\cdb_unpack.cpp"
+					>
 				</File>
 			</Filter>
 			<Filter
 				Name="common"
-				Filter="">
+				>
 				<File
-					RelativePath="..\src\common\eventlog.c">
+					RelativePath="..\src\common\eventlog.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\hexdump.c">
+					RelativePath="..\src\common\hexdump.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\xalloc.c">
+					RelativePath="..\src\common\xalloc.cpp"
+					>
 				</File>
 			</Filter>
 			<Filter
 				Name="compat"
-				Filter="">
+				>
 				<File
-					RelativePath="..\src\compat\getopt.c">
+					RelativePath="..\src\compat\getopt.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\mmap.c">
+					RelativePath="..\src\compat\mmap.cpp"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\strerror.c">
+					RelativePath="..\src\compat\strerror.cpp"
+					>
 				</File>
 			</Filter>
 		</Filter>
 		<Filter
 			Name="Header Files"
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
-			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
+			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
+			>
 			<Filter
 				Name="common"
-				Filter="">
+				>
 				<File
-					RelativePath="..\src\common\eventlog.h">
+					RelativePath="..\src\common\eventlog.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\setup_before.h">
+					RelativePath="..\src\common\setup_before.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\common\xalloc.h">
+					RelativePath="..\src\common\xalloc.h"
+					>
 				</File>
 			</Filter>
 			<Filter
 				Name="compat"
-				Filter="">
+				>
 				<File
-					RelativePath="..\src\compat\getopt.h">
+					RelativePath="..\src\compat\getopt.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\mmap.h">
+					RelativePath="..\src\compat\mmap.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\compat\strerror.h">
+					RelativePath="..\src\compat\strerror.h"
+					>
 				</File>
 			</Filter>
 			<Filter
 				Name="bncdb"
-				Filter="">
+				>
 				<File
-					RelativePath="..\src\tinycdb\cdb.h">
+					RelativePath="..\src\tinycdb\cdb.h"
+					>
 				</File>
 				<File
-					RelativePath="..\src\tinycdb\cdb_int.h">
+					RelativePath="..\src\tinycdb\cdb_int.h"
+					>
 				</File>
 			</Filter>
 		</Filter>
 		<Filter
 			Name="Resource Files"
 			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx"
-			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}">
+			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
+			>
 			<File
-				RelativePath="..\src\win32\console_resource.rc">
+				RelativePath="..\src\win32\console_resource.rc"
+				>
 			</File>
 		</Filter>
 	</Files>

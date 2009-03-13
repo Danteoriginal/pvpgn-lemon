@@ -1,3 +1,4 @@
+#include "stdafx.h"
 /* trees.c -- output deflated data using Huffman coding
  * Copyright (C) 1995-2002 Jean-loup Gailly
  * For conditions of distribution and use, see copyright notice in zlib.h 

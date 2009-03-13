@@ -1,3 +1,4 @@
+#include "stdafx.h"
 /* basic cdb_make_add routine
  *
  * This file is a part of tinycdb package by Michael Tokarev, mjt@corpit.ru.

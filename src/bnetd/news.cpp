@@ -1,3 +1,4 @@
+#include "stdafx.h";
 /*
  * Copyright (C) 2000 Alexey Belyaev (spider@omskart.ru)
  * Copyright (C) 2004 Dizzy (dizzy@roedu.net)

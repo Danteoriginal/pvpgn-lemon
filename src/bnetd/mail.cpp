@@ -1,3 +1,4 @@
+#include "stdafx.h";
 /*
  * Copyright (C) 2001  Dizzy (dizzy@roedu.net)
  * Copyright (C) 2004  Donny Redmond (dredmond@linuxmail.org)

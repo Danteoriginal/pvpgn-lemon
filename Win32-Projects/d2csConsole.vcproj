@@ -153,131 +153,131 @@
 				Name="d2cs"
 				Filter="">
 				<File
-					RelativePath="..\src\d2cs\bnetd.c">
+					RelativePath="..\src\d2cs\bnetd.cpp">
 				</File>
 				<File
-					RelativePath="..\src\d2cs\cmdline_parse.c">
+					RelativePath="..\src\d2cs\cmdline_parse.cpp">
 				</File>
 				<File
-					RelativePath="..\src\d2cs\conf.c">
+					RelativePath="..\src\d2cs\conf.cpp">
 				</File>
 				<File
-					RelativePath="..\src\d2cs\connection.c">
+					RelativePath="..\src\d2cs\connection.cpp">
 				</File>
 				<File
-					RelativePath="..\src\d2cs\d2charfile.c">
+					RelativePath="..\src\d2cs\d2charfile.cpp">
 				</File>
 				<File
-					RelativePath="..\src\d2cs\d2charlist.c">
+					RelativePath="..\src\d2cs\d2charlist.cpp">
 				</File>
 				<File
-					RelativePath="..\src\d2cs\d2gs.c">
+					RelativePath="..\src\d2cs\d2gs.cpp">
 				</File>
 				<File
-					RelativePath="..\src\d2cs\d2ladder.c">
+					RelativePath="..\src\d2cs\d2ladder.cpp">
 				</File>
 				<File
-					RelativePath="..\src\d2cs\game.c">
+					RelativePath="..\src\d2cs\game.cpp">
 				</File>
 				<File
-					RelativePath="..\src\d2cs\gamequeue.c">
+					RelativePath="..\src\d2cs\gamequeue.cpp">
 				</File>
 				<File
-					RelativePath="..\src\d2cs\handle_bnetd.c">
+					RelativePath="..\src\d2cs\handle_bnetd.cpp">
 				</File>
 				<File
-					RelativePath="..\src\d2cs\handle_d2cs.c">
+					RelativePath="..\src\d2cs\handle_d2cs.cpp">
 				</File>
 				<File
-					RelativePath="..\src\d2cs\handle_d2gs.c">
+					RelativePath="..\src\d2cs\handle_d2gs.cpp">
 				</File>
 				<File
-					RelativePath="..\src\d2cs\handle_init.c">
+					RelativePath="..\src\d2cs\handle_init.cpp">
 				</File>
 				<File
-					RelativePath="..\src\d2cs\handle_signal.c">
+					RelativePath="..\src\d2cs\handle_signal.cpp">
 				</File>
 				<File
-					RelativePath="..\src\d2cs\main.c">
+					RelativePath="..\src\d2cs\main.cpp">
 				</File>
 				<File
-					RelativePath="..\src\d2cs\net.c">
+					RelativePath="..\src\d2cs\net.cpp">
 				</File>
 				<File
-					RelativePath="..\src\d2cs\prefs.c">
+					RelativePath="..\src\d2cs\prefs.cpp">
 				</File>
 				<File
-					RelativePath="..\src\d2cs\s2s.c">
+					RelativePath="..\src\d2cs\s2s.cpp">
 				</File>
 				<File
-					RelativePath="..\src\d2cs\server.c">
+					RelativePath="..\src\d2cs\server.cpp">
 				</File>
 				<File
-					RelativePath="..\src\d2cs\serverqueue.c">
+					RelativePath="..\src\d2cs\serverqueue.cpp">
 				</File>
 				<File
-					RelativePath="..\src\d2cs\xstring.c">
+					RelativePath="..\src\d2cs\xstring.cpp">
 				</File>
 			</Filter>
 			<Filter
 				Name="common"
 				Filter="">
 				<File
-					RelativePath="..\src\common\addr.c">
+					RelativePath="..\src\common\addr.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\bn_type.c">
+					RelativePath="..\src\common\bn_type.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\d2char_checksum.c">
+					RelativePath="..\src\common\d2char_checksum.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\eventlog.c">
+					RelativePath="..\src\common\eventlog.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\fdwatch.c">
+					RelativePath="..\src\common\fdwatch.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\fdwatch_epoll.c">
+					RelativePath="..\src\common\fdwatch_epoll.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\fdwatch_kqueue.c">
+					RelativePath="..\src\common\fdwatch_kqueue.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\fdwatch_poll.c">
+					RelativePath="..\src\common\fdwatch_poll.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\fdwatch_select.c">
+					RelativePath="..\src\common\fdwatch_select.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\hashtable.c">
+					RelativePath="..\src\common\hashtable.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\hexdump.c">
+					RelativePath="..\src\common\hexdump.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\list.c">
+					RelativePath="..\src\common\list.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\network.c">
+					RelativePath="..\src\common\network.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\packet.c">
+					RelativePath="..\src\common\packet.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\queue.c">
+					RelativePath="..\src\common\queue.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\rlimit.c">
+					RelativePath="..\src\common\rlimit.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\trans.c">
+					RelativePath="..\src\common\trans.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\util.c">
+					RelativePath="..\src\common\util.cpp">
 				</File>
 				<File
-					RelativePath="..\src\common\xalloc.c">
+					RelativePath="..\src\common\xalloc.cpp">
 				</File>
 			</Filter>
 			<Filter
@@ -287,53 +287,53 @@
 					RelativePath="..\src\compat\access.h">
 				</File>
 				<File
-					RelativePath="..\src\compat\difftime.c">
+					RelativePath="..\src\compat\difftime.cpp">
 				</File>
 				<File
-					RelativePath="..\src\compat\gettimeofday.c">
+					RelativePath="..\src\compat\gettimeofday.cpp">
 				</File>
 				<File
-					RelativePath="..\src\compat\inet_aton.c">
+					RelativePath="..\src\compat\inet_aton.cpp">
 				</File>
 				<File
-					RelativePath="..\src\compat\inet_ntoa.c">
+					RelativePath="..\src\compat\inet_ntoa.cpp">
 				</File>
 				<File
-					RelativePath="..\src\compat\pdir.c">
+					RelativePath="..\src\compat\pdir.cpp">
 				</File>
 				<File
-					RelativePath="..\src\compat\psock.c">
+					RelativePath="..\src\compat\psock.cpp">
 				</File>
 				<File
-					RelativePath="..\src\compat\strcasecmp.c">
+					RelativePath="..\src\compat\strcasecmp.cpp">
 				</File>
 				<File
-					RelativePath="..\src\compat\strdup.c">
+					RelativePath="..\src\compat\strdup.cpp">
 				</File>
 				<File
-					RelativePath="..\src\compat\strerror.c">
+					RelativePath="..\src\compat\strerror.cpp">
 				</File>
 				<File
-					RelativePath="..\src\compat\strftime.c">
+					RelativePath="..\src\compat\strftime.cpp">
 				</File>
 				<File
-					RelativePath="..\src\compat\strncasecmp.c">
+					RelativePath="..\src\compat\strncasecmp.cpp">
 				</File>
 				<File
-					RelativePath="..\src\compat\strsep.c">
+					RelativePath="..\src\compat\strsep.cpp">
 				</File>
 				<File
-					RelativePath="..\src\compat\strtoul.c">
+					RelativePath="..\src\compat\strtoul.cpp">
 				</File>
 				<File
-					RelativePath="..\src\compat\uname.c">
+					RelativePath="..\src\compat\uname.cpp">
 				</File>
 			</Filter>
 			<Filter
 				Name="win32"
 				Filter="">
 				<File
-					RelativePath="..\src\win32\service.c">
+					RelativePath="..\src\win32\service.cpp">
 				</File>
 			</Filter>
 		</Filter>

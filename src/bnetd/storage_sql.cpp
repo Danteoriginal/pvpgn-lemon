@@ -1,3 +1,4 @@
+#include "stdafx.h";
 /*
  * Copyright (C) 2002 TheUndying
  * Copyright (C) 2002 zap-zero

@@ -1,3 +1,4 @@
+#include "stdafx.h";
 /*
  * Copyright (C) 2000 Onlyer (onlyer@263.net)
  * Copyright (C) 2001 Ross Combs (ross@bnetd.org)
@@ -195,16 +196,16 @@ extern char const * versioncheck_get_eqn(t_versioncheck const * vc)
     return vc->eqn;
 }
 
-t_parsed_exeinfo * parse_exeinfo(char const * exeinfo)
+t_parsed_exeinfo * parse_exeinfo(char const * _exeinfo)
 {
   t_parsed_exeinfo * parsed_exeinfo;
 
-    if (!exeinfo) {
+    if (!_exeinfo) {
 	return NULL;
     }
 
     parsed_exeinfo = (t_parsed_exeinfo*)xmalloc(sizeof(t_parsed_exeinfo));
-    parsed_exeinfo->exe = xstrdup(exeinfo);
+    parsed_exeinfo->exe = xstrdup(_exeinfo);
     parsed_exeinfo->time = 0;
     parsed_exeinfo->size = 0;
     
@@ -218,8 +219,8 @@ t_parsed_exeinfo * parse_exeinfo(char const * exeinfo)
 	int size;
         char time_invalid = 0;
 
-	if ((exeinfo[0]=='\0') ||	   //happens when using war3-noCD and having deleted war3.org
-	    (strcmp(exeinfo,"badexe")==0)) //happens when AUTHREQ had no owner/exeinfo entry
+	if ((parsed_exeinfo->exe[0]=='\0') ||	   //happens when using war3-noCD and having deleted war3.org
+	    (strcmp(parsed_exeinfo->exe,"badexe")==0)) //happens when AUTHREQ had no owner/exeinfo entry
 	{
           xfree((void *)parsed_exeinfo->exe);
           xfree((void *)parsed_exeinfo);
@@ -230,11 +231,14 @@ t_parsed_exeinfo * parse_exeinfo(char const * exeinfo)
         memset(&t1,0,sizeof(t1));
         t1.tm_isdst = -1;
 
+		char *exeinfo = xstrdup(_exeinfo);
+
         exeinfo    = strreverse((char *)exeinfo);
         if (!(marker     = strchr(exeinfo,' ')))
         {
 	  xfree((void *)parsed_exeinfo->exe);
 	  xfree((void *)parsed_exeinfo);
+	  xfree((void*)exeinfo);
 	  return NULL;
         }
 	for (; marker[0]==' ';marker++); 
@@ -243,6 +247,7 @@ t_parsed_exeinfo * parse_exeinfo(char const * exeinfo)
         {
 	  xfree((void *)parsed_exeinfo->exe);
 	  xfree((void *)parsed_exeinfo);
+	  xfree((void*)exeinfo);
 	  return NULL;
 	} 
 	for (; marker[0]==' ';marker++);
@@ -251,6 +256,7 @@ t_parsed_exeinfo * parse_exeinfo(char const * exeinfo)
         {
 	  xfree((void *)parsed_exeinfo->exe);
 	  xfree((void *)parsed_exeinfo);
+	  xfree((void*)exeinfo);
 	  return NULL;
 	}
         for (; marker[0]==' ';marker++);
@@ -259,6 +265,7 @@ t_parsed_exeinfo * parse_exeinfo(char const * exeinfo)
         marker++; 
         
         exe = xstrdup(marker);
+		xfree((void*)exeinfo);
         xfree((void *)parsed_exeinfo->exe);
         parsed_exeinfo->exe = strreverse((char *)exe);
 

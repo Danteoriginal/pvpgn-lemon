@@ -31,7 +31,7 @@
 
 #endif
 
-typedef struct topic
+typedef struct _topic
 #ifdef TOPIC_INTERNAL_ACCESS
 {
   char *   channel_name;

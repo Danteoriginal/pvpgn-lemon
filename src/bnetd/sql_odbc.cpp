@@ -1,3 +1,4 @@
+#include "stdafx.h";
 /*
  * Copyright (C) 2005 CreepLord (creeplord@pvpgn.org)
  *

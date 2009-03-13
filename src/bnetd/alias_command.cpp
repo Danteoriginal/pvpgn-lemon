@@ -1,3 +1,4 @@
+#include "stdafx.h";
 /*
  * Copyright (C) 2000  Onlyer (onlyer@263.net)
  * Copyright (C) 2002  Ross Combs (rocombs@cs.nmsu.edu)
@@ -215,7 +216,7 @@ static char * replace_args(char const * in, unsigned int * offsets, int numargs,
         {
             char * newout;
 	    
-            newout = (char*)xmalloc(size+(off2-off1)+1); /* curr + new_ + nul */
+            newout = (char*)xmalloc(size+(off2-off1)+1); /* curr + new + nul */
 	    size = size+(off2-off1)+1;
 	    memmove(newout,out,outpos);
 	    xfree(out);
@@ -304,7 +305,7 @@ static int do_alias(t_connection * c, char const * cmd, char const * text)
             {
 		char * msgtmp;
 		char * tmp2;
-		char * cmd = "%C";
+		const char * cmd = "%C";
 		match = 1;
 		
 		if ((msgtmp = replace_args(output->line,offsets,numargs+1,text)))

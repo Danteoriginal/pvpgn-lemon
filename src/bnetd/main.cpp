@@ -1,3 +1,4 @@
+#include "stdafx.h";
 /*
  * Copyright (C) 1998  Mark Baysinger (mbaysing@ucsd.edu)
  * Copyright (C) 1998,1999,2000  Ross Combs (rocombs@cs.nmsu.edu)
@@ -450,9 +451,11 @@ void pvpgn_greeting(void)
     return;
 }
 
+#ifndef _MSC_VER
        #include <sys/time.h>
        #include <sys/resource.h>
        #include <unistd.h>
+#endif
 
 // MAIN STARTS HERE!!!
 #ifdef WIN32_GUI
@@ -463,13 +466,8 @@ extern int main(int argc, char * * argv)
 {
     int a;
     char *pidfile;
-struct rlimit tmp;
-
-tmp.rlim_cur=1024768;
-tmp.rlim_max=1024768;
 
 	xalloc_install();
-setrlimit(RLIMIT_NOFILE,&tmp);
 
     if ((a = cmdline_load(argc, argv)) != 1)
 	return a;

@@ -1,3 +1,4 @@
+#include "stdafx.h";
 /*
  * Copyright (C) 2004  CreepLord (creeplord@pvpgn.org)
  *
@@ -61,7 +62,7 @@ extern int trans_load(char const * filename, int program)
     unsigned int	pos;
     char		*buff;
     char		*temp;
-    char const		*input;
+    char			*input;
     char const		*output;
     char const		*exclude;
     char const		*include;

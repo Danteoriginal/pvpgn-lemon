@@ -1,3 +1,4 @@
+#include "stdafx.h";
 /*
  * Copyright (C) 2003  RUSU Mihai (dizzy@roedu.net)
  *

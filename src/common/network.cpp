@@ -1,3 +1,4 @@
+#include "stdafx.h";
 /*
  * Copyright (C) 1998  Mark Baysinger (mbaysing@ucsd.edu)
  * Copyright (C) 1998,1999,2000  Ross Combs (rocombs@cs.nmsu.edu)
@@ -54,7 +55,7 @@ extern int net_recv(int sock, void *buff, int len)
 {
     int res;
 
-    res = psock_recv(sock, buff, len, 0);
+    res = psock_recv(sock,(char*) buff, len, 0);
     if (res > 0) return res;
     if (!res) return -1;	/* connection closed */
 
@@ -148,7 +149,7 @@ extern int net_send(int sock, const void *buff, int len)
 {
     int res;
 
-    res = psock_send(sock, buff, len, 0);
+    res = psock_send(sock,(const char *) buff, len, 0);
 
     if (res > 0) return res;
     if (!res) return -1;

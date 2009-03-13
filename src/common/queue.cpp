@@ -1,3 +1,4 @@
+#include "stdafx.h";
 /*
  * Copyright (C) 1998,1999,2001  Ross Combs (rocombs@cs.nmsu.edu)
  *
@@ -188,7 +189,7 @@ extern int queue_get_length(t_queue const * const * queue)
 
 
 
-void *queue_thr(void *in)
+void queue_thr(void *in)
 {
 	t_queue * * queue=(t_queue * *)in;
     t_packet * temp;

@@ -1,3 +1,4 @@
+#include "stdafx.h";
 /*
  * Copyright (C) 2001  Hakan Tandogan (hakan@gurkensalat.com)
  *

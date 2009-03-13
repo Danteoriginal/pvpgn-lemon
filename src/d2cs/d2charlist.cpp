@@ -1,3 +1,4 @@
+#include "stdafx.h";
 /*
  * Copyright (C) 2004      ls_sons  (ls@gamelife.org)
  * Copyright (C) 2004	Olaf Freyer (aaron@cs.tu-berlin.de)

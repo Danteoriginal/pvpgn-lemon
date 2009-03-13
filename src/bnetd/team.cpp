@@ -1,3 +1,4 @@
+#include "stdafx.h";
 /*
  * (C) 2004		Olaf Freyer	(aaron@cs.tu-berlin.de)
  *
